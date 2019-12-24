@@ -92,6 +92,7 @@ public class DemoConfig extends JFinalConfig {
 		me.addSharedFunction("/common/_paginate.html");
 		me.addSharedFunction("/common/layout_admin.html");
 		me.addSharedFunction("/common/layout_redo.html");
+		me.addSharedFunction("/common/layout_teacher.html");
 	}
 	
 	/**
@@ -119,7 +120,8 @@ public class DemoConfig extends JFinalConfig {
 	 * 配置全局拦截器
 	 */
 	public void configInterceptor(Interceptors me) {
-		me.add(new GlobalActionInterceptor());
+
+//		me.add(new GlobalActionInterceptor());
 	}
 	
 	/**

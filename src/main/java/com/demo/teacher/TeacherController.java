@@ -12,9 +12,17 @@ public class TeacherController extends Controller{
     @Inject
     TeacherService teacherService;
 
+    //    教师系统前端
+    public void teaIndex(){render("teaIndex.html");}
+
+    public void uploadQuestions(){render("uploadQuestions.html");}
+    public void writtingPaper(){render("writtingPaper.html");}
+    public void managementClass(){render("managementClass.html");}
+
+
     public void index() {
         setAttr("teacherPage",teacherService.paginate(getParaToInt(0, 1), 10));
-        render("teacher.html");
+        render("teaIndex.html");
     }
 
     public void list(){
@@ -34,7 +42,7 @@ public class TeacherController extends Controller{
     public void delete(){
         int id = Integer.parseInt(getPara("id"));
         teacherService.delete(id);
-        render("teacher.html");
+        render("teaIndex.html");
         //return 1;
     }
 

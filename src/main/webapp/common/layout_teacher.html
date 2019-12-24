@@ -1,0 +1,70 @@
+#define layout_teacher()
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <link rel="stylesheet" href="../assets/res/layui/css/layui.css">
+    <link rel="stylesheet" href="../assets/res/static/css/index.css">
+</head>
+<body>
+<!-- nav部分 -->
+<div class="nav index">
+    <div class="layui-container">
+        <!-- logo -->
+        <div class="nav-logo" style="margin-left: -20px">
+            <a href="index.html">
+                <img src="../assets/res/image/logo.png" alt="题趣多题库系统">
+            </a>
+        </div>
+        <div class="nav-list">
+            <button>
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="layui-nav" lay-filter="">
+                <li class="layui-nav-item"><a href="/teacher/uploadQuestions">上传试题</a></li>
+                <li class="layui-nav-item"><a href="/teacher/writtingPaper">编写试卷</a></li>
+                <li class="layui-nav-item"><a href="/teacher/managementClass">管理班级</a></li>
+                <li class="layui-nav-item"><a href="/teacher/teaUser">个人中心</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="../assets/res/layui/layui.js"></script>
+
+<!-- main部分 -->
+#@main()
+<!-- footer部分 -->
+<div class="footer">
+    <div class="layui-container">
+        <p class="footer-web"></p>
+        <div class="layui-row footer-contact">
+            <div class="layui-col-sm2 layui-col-lg1"><img src="../assets/res/static/img/erweima.jpg"></div>
+            <div class="layui-col-sm10 layui-col-lg11">
+                <div class="layui-row">
+                    <div class="layui-col-sm6 layui-col-md8 layui-col-lg9">
+                        <p class="contact-top"><i class="layui-icon layui-icon-cellphone"></i>&nbsp;0717-88888888&nbsp;&nbsp;(9:00-18:00)</p>
+                        <p class="contact-bottom"><i class="layui-icon layui-icon-home"></i>&nbsp;tqd88888888@163.com</p>
+                    </div>
+                    <div class="layui-col-sm6 layui-col-md4 layui-col-lg3">
+                        <p class="contact-top"><span class="right">该系统版权归 <a href="https://github.com/Question-bank-management-system/Question-bank-management-system.git
+" target="_blank">题趣多团队</a> 所有</span></p>
+                        <p class="contact-bottom"><span class="right">Copyright&nbsp;©&nbsp;2019-&nbsp;&nbsp;ICP&nbsp;备88888888号</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--[if lt IE 9]>
+<script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+<script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script>
+    layui.config({
+        base: '../assets/res/static/js/'
+    }).use('firm');
+</script>
+</body>
+</html>
+#end
