@@ -1,5 +1,9 @@
 package com.demo.user;
 
+import com.demo.admin.AdminService;
+import com.demo.common.model.AdminUser;
+import com.demo.common.model.Student;
+import com.demo.common.model.Teacher;
 import com.demo.common.model.User;
 import com.jfinal.aop.Inject;
 import com.jfinal.core.Controller;
@@ -49,6 +53,26 @@ public class UserController extends Controller{
         User user = getModel(User.class);
         //System.out.println(user.getUsername());
         userService.add(user);
+        int userid = (int)userService.queryByPara(user);
+        int userlv = userService.queryByUserlv((int)userid);
+
+        if(userlv == 1){
+            AdminUser adminUser = new AdminUser();
+            adminUser.setUserId(userid);
+            adminUser.save();
+        }
+        else if(userlv == 2){
+            Teacher teacher = new Teacher();
+            teacher.setUserId(userid);
+            teacher.save();
+        }
+        else{
+            Student student = new Student();
+            student.setUserId(userid);
+            student.save();
+        }
+
+
         //int userId = (int)userService.queryByPara(user);
         redirect("/user");
     }

@@ -28,8 +28,8 @@ public class TeacherService {
     }
 
     public void add(Teacher teacher1){
-        Record teacher = new Record().set("userlv",teacher1.getUserlv())
-                .set("user_id",teacher1.getUserId()).set("subject_id",teacher1.getSubjectId());
+        Record teacher = new Record().set("user_id",teacher1.getUserId())
+                .set("subject_id",teacher1.getSubjectId());
         Db.save("teacher",teacher);
     }
 }

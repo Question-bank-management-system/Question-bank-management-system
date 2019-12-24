@@ -28,8 +28,7 @@ public class AdminService {
     }
 
     public void add(AdminUser adminUser1){
-        Record adminUser = new Record().set("userlv",adminUser1.getUserlv())
-                .set("user_id",adminUser1.getUserId());
+        Record adminUser = new Record().set("user_id",adminUser1.getUserId());
         Db.save("admin_user",adminUser);
     }
 }

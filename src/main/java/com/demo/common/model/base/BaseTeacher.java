@@ -17,14 +17,6 @@ public abstract class BaseTeacher<M extends BaseTeacher<M>> extends Model<M> imp
 		return getInt("id");
 	}
 
-	public void setUserlv(java.lang.Integer userlv) {
-		set("userlv", userlv);
-	}
-	
-	public java.lang.Integer getUserlv() {
-		return getInt("userlv");
-	}
-
 	public void setUserId(java.lang.Integer userId) {
 		set("user_id", userId);
 	}

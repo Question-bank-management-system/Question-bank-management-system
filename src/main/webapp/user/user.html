@@ -3,41 +3,7 @@
 #define main()
 
 <table id="user" lay-filter="user" ></table>
-<!--添加的弹出层开始-->
-<form class="layui-form layui-form-pane" action="/user/add" method="post" id= 'form_add' style="display: none">
-    <div class="layui-form-item">
-        <label class="layui-form-label">用户名</label>
-        <div class="layui-input-inline">
-            <label>
-                <input type="text" name="user.username" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
-            </label>
-        </div>
-    </div>
-    <div class="layui-form-item">
-        <label class="layui-form-label">密码</label>
-        <div class="layui-input-inline">
-            <input type="text" name="user.password" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
-        </div>
-    </div>
-    <div class="layui-form-item">
-        <label class="layui-form-label">类型</label>
-        <div class="layui-input-inline">
-            <select name="user.type" lay-filter="type">
-                <option value="admin">admin</option>
-                <option value="teacher">teacher</option>
-                <option value="student" selected>student</option>
-            </select>
-        </div>
-    </div>
-    <div class="layui-form-item">
-        <div class="layui-input-block">
-            <button type="submit" class="layui-btn">立即提交</button>
-            <!--            <button lay-submit lay-filter="*">提交</button>-->
-            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-        </div>
-    </div>
-</form>
-<!--添加的弹出层结束-->
+
 <!--数据表格开始-->
 
 <script type="text/html" id="barUser">
@@ -249,3 +215,38 @@
     });
 </script>
 #end
+<!--添加的弹出层开始-->
+<form class="layui-form layui-form-pane" action="/user/add" method="post" id= 'form_add' style="display: none">
+    <div class="layui-form-item">
+        <label class="layui-form-label">用户名</label>
+        <div class="layui-input-inline">
+            <label>
+                <input type="text" name="user.username" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+            </label>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">密码</label>
+        <div class="layui-input-inline">
+            <input type="text" name="user.password" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">类型</label>
+        <div class="layui-input-inline">
+            <select name="user.type" lay-filter="type">
+                <option value="admin">admin</option>
+                <option value="teacher">teacher</option>
+                <option value="student" selected>student</option>
+            </select>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button type="submit" class="layui-btn">立即提交</button>
+            <!--            <button lay-submit lay-filter="*">提交</button>-->
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+<!--添加的弹出层结束-->

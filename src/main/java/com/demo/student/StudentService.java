@@ -29,7 +29,7 @@ public class StudentService {
 
     public void add(Student student1){
         Record student = new Record().set("class_id",student1.getClassId())
-                .set("userlv",student1.getUserlv()).set("user_id",student1.getUserId());
+                .set("user_id",student1.getUserId());
         Db.save("student",student);
     }
 }

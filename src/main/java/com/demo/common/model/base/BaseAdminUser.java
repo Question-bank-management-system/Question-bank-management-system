@@ -17,14 +17,6 @@ public abstract class BaseAdminUser<M extends BaseAdminUser<M>> extends Model<M>
 		return getInt("id");
 	}
 
-	public void setUserlv(java.lang.Integer userlv) {
-		set("userlv", userlv);
-	}
-	
-	public java.lang.Integer getUserlv() {
-		return getInt("userlv");
-	}
-
 	public void setUserId(java.lang.Integer userId) {
 		set("user_id", userId);
 	}
