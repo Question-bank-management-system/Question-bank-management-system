@@ -11,6 +11,7 @@ public class StudentController extends Controller {
     @Inject
     private StudentService studentService;
 
+//    导航栏
     public void testPaper() {
         render("testPaper.html");
     }
@@ -27,11 +28,12 @@ public class StudentController extends Controller {
         render("user.html");
     }
 
-
+    //试卷考试
     public void examChinese(){render("examfile/examChinese.html");}
     public void examMath(){render("examfile/examMath.html");}
     public void examEnglish(){render("examfile/examEnglish.html");}
 
+    //练习考试
     public void practiceChinese(){
         render("practicefile/practiceChinese.html");
     }
@@ -41,6 +43,12 @@ public class StudentController extends Controller {
     public void practiceMath(){
         render("practicefile/practiceMath.html");
     }
+
+    //    错题重做
+    public void redoChinese(){render("redofile/redoChinese.html");}
+    public void redoMath(){render("redofile/redoMath.html");}
+    public void redoEnglish(){render("redofile/redoEnglish.html");}
+    public void redoNull(){render("redofile/redoNull.html");}
 
     public void index(){
         setAttr("studentPage",studentService.paginate(getParaToInt(0, 1),10));
