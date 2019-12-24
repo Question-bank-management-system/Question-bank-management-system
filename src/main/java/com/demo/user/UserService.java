@@ -35,4 +35,8 @@ public class UserService {
                 set("password",user1.getPassword()).set("userlv",user1.getUserlv());
         Db.save("user",user);
     }
+
+    public int queryByPara(User user){
+        return Db.queryInt("select id from user where username = ? and password = ?", user.getUsername(),user.getPassword());
+    }
 }
