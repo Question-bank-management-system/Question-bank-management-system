@@ -1,10 +1,10 @@
-#define layout()
+#define layout1()
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>layout 后台大布局 - Layui</title>
+    <title> 题趣多题库系统 - 后台管理</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -13,30 +13,24 @@
     <meta name="format-detection" content="telephone=no">
 
     <link rel="stylesheet" href="../assets/res/layui/css/layui.css"  media="all">
+    <script src="../assets/res/layui/layui.js" charset="utf-8"></script>
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
-        <div class="layui-logo">layui 后台布局</div>
+        <div class="layui-logo">题趣多题库系统 - 后台管理</div>
         <!-- 头部区域（可配合layui已有的水平导航） -->
         <ul class="layui-nav layui-layout-left">
-            <li class="layui-nav-item"><a href="">控制台</a></li>
-            <li class="layui-nav-item"><a href="">商品管理</a></li>
-            <li class="layui-nav-item"><a href="">用户</a></li>
-            <li class="layui-nav-item">
-                <a href="javascript:;">其它系统</a>
-                <dl class="layui-nav-child">
-                    <dd><a href="">邮件管理</a></dd>
-                    <dd><a href="">消息管理</a></dd>
-                    <dd><a href="">授权管理</a></dd>
-                </dl>
-            </li>
+            <li class="layui-nav-item"><a href="/user/user.html">用户</a></li>
+            <li class="layui-nav-item"><a href="/classs/class.html">班级</a></li>
+            <li class="layui-nav-item"><a href="/testPaper/testPaper.html">题目</a></li>
+            <li class="layui-nav-item"><a href="/topic/topic.html">排行榜</a></li>
         </ul>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
                 <a href="javascript:;">
                     <img src="//tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg" class="layui-nav-img">
-                    贤心
+                    ctgu
                 </a>
                 <dl class="layui-nav-child">
                     <dd><a href="">基本资料</a></dd>
@@ -50,26 +44,36 @@
     <div class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
-                <li class="layui-nav-item layui-nav-itemed">
-                    <a class="" href="javascript:;">所有商品</a>
+            <script type="text/javascript" src="layui/layui.js"></script>
+            <ul class="layui-nav layui-nav-tree"  lay-filter="user">
+                <li class="layui-nav-item ">
+                    <a href="javascript:">用户管理</a>
+                    <dl class="layui-nav-child layui-this">
+                        <dd><a  href="/user/index">用户密码列表</a></dd>
+                        <dd><a  href="/adminUser/index">管理员列表</a></dd>
+                        <dd><a  href="/teacher/index">教师列表</a></dd>
+                        <dd><a  href="/student/index">学生列表</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:">班级管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">列表一</a></dd>
-                        <dd><a href="javascript:;">列表二</a></dd>
-                        <dd><a href="javascript:;">列表三</a></dd>
-                        <dd><a href="">超链接</a></dd>
+                        <dd><a  href="/classs/index">班级列表</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="javascript:;">解决方案</a>
+                    <a class="" href="javascript:">题目管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">列表一</a></dd>
-                        <dd><a href="javascript:;">列表二</a></dd>
-                        <dd><a href="">超链接</a></dd>
+                        <dd><a href="/testPaper/index">题目列表</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a href="">云市场</a></li>
-                <li class="layui-nav-item"><a href="">发布商品</a></li>
+                <li class="layui-nav-item">
+                    <a class="" href="javascript:">排行管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="/topic/index">排行列表</a></dd>
+                    </dl>
+                </li>
+
             </ul>
         </div>
     </div>
@@ -83,10 +87,10 @@
 
     <div class="layui-footer">
         <!-- 底部固定区域 -->
-        © layui.com - 底部固定区域
+        © tqd.com
     </div>
 </div>
-<script src="../assets/res/layui/layui.js" charset="utf-8"></script>
+
 <script>
     //JavaScript代码区域
     layui.use('element', function(){

@@ -1,10 +1,16 @@
 package com.demo.common;
 
+import com.demo.admin.AdminController;
 import com.demo.blog.BlogController;
+import com.demo.classs.ClassController;
+import com.demo.common.model.Teacher;
 import com.demo.common.model._MappingKit;
 import com.demo.index.IndexController;
 import com.demo.login.LoginController;
 import com.demo.student.StudentController;
+import com.demo.teacher.TeacherController;
+import com.demo.testPaper.TestPaperController;
+import com.demo.topic.TopicController;
 import com.demo.user.UserController;
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers;
@@ -73,12 +79,18 @@ public class DemoConfig extends JFinalConfig {
 		me.add("/login", LoginController.class);
 		me.add("/user", UserController.class);
 		me.add("/student", StudentController.class);
+		me.add("/admin", AdminController.class);
+		me.add("/teacher", TeacherController.class);
+		me.add("/classs", ClassController.class);
+		me.add("/testPaper", TestPaperController.class);
+		me.add("/topic", TopicController.class);
 	}
 	
 	public void configEngine(Engine me) {
 		me.addSharedFunction("/common/_layout.html");
 		me.addSharedFunction("/common/layout_paper.html");
 		me.addSharedFunction("/common/_paginate.html");
+		me.addSharedFunction("/common/layout_admin.html");
 	}
 	
 	/**
