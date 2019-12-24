@@ -91,6 +91,7 @@ public class DemoConfig extends JFinalConfig {
 		me.addSharedFunction("/common/layout_paper.html");
 		me.addSharedFunction("/common/_paginate.html");
 		me.addSharedFunction("/common/layout_admin.html");
+		me.addSharedFunction("/common/layout_redo.html");
 	}
 	
 	/**
