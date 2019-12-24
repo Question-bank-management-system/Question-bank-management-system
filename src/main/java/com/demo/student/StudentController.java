@@ -9,7 +9,7 @@ import java.util.List;
 
 public class StudentController extends Controller {
     @Inject
-    StudentService studentService;
+    private StudentService studentService;
 
     public void testPaper() {
         render("testPaper.html");
