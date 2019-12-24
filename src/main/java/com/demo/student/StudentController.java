@@ -23,8 +23,23 @@ public class StudentController extends Controller {
     public void viewResults() {
         render("viewResults.html");
     }
-    public void personalCenter() {
-        render("personalCenter.html");
+    public void user() {
+        render("user.html");
+    }
+
+
+    public void examChinese(){render("examfile/examChinese.html");}
+    public void examMath(){render("examfile/examMath.html");}
+    public void examEnglish(){render("examfile/examEnglish.html");}
+
+    public void practiceChinese(){
+        render("practicefile/practiceChinese.html");
+    }
+    public void practiceEnglish(){
+        render("practicefile/practiceEnglish.html");
+    }
+    public void practiceMath(){
+        render("practicefile/practiceMath.html");
     }
 
     public void index(){
@@ -65,15 +80,5 @@ public class StudentController extends Controller {
         //System.out.println(student.get)
         studentService.add(student);
         redirect("/student");
-    }
-
-    public void practiceChinese(){
-        render("practicefile/practiceChinese.html");
-    }
-    public void practiceEnglish(){
-        render("practicefile/practiceEnglish.html");
-    }
-    public void practiceMath(){
-        render("practicefile/practiceMath.html");
     }
 }
