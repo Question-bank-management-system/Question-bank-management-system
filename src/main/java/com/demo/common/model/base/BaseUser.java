@@ -41,4 +41,12 @@ public abstract class BaseUser<M extends BaseUser<M>> extends Model<M> implement
 		return getInt("userlv");
 	}
 
+	public void setType(java.lang.String type) {
+		set("type", type);
+	}
+	
+	public java.lang.String getType() {
+		return getStr("type");
+	}
+
 }

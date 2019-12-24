@@ -23,9 +23,13 @@
         </div>
     </div>
     <div class="layui-form-item">
-        <label class="layui-form-label">等级</label>
+        <label class="layui-form-label">类型</label>
         <div class="layui-input-inline">
-            <input type="text" name="user.userlv" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+            <select name="user.type" lay-filter="type">
+                <option value="admin">admin</option>
+                <option value="teacher">teacher</option>
+                <option value="student" selected>student</option>
+            </select>
         </div>
     </div>
     <div class="layui-form-item">
@@ -85,6 +89,10 @@
                 align : 'center',
                 title : '用户等级'
             }, {
+                field : 'type',
+                align : 'center',
+                title : '类型'
+            }, {
                 fixed : 'right',
                 title : '操作',
                 align : 'center',
@@ -101,7 +109,7 @@
                 layer.open({
                     type: 1,
                     skin: 'layui-layer-rim', //加上边框
-                    area: ['420px', '240px'], //宽高
+                    area: ['420px', '350px'], //宽高
                     content: $('#form_add')
                     // layer.alert('编辑行：<br>'+ JSON.stringify(data))
                 });
@@ -137,15 +145,6 @@
                     obj.del();
                     layer.close(index);
 
-                });
-            } else if (obj.event === 'add') {
-                //页面层
-                layer.open({
-                    type: 1,
-                    skin: 'layui-layer-rim', //加上边框
-                    area: ['420px', '240px'], //宽高
-                    content: $('#form_add')
-                    // layer.alert('编辑行：<br>'+ JSON.stringify(data))
                 });
             }
         });
@@ -234,6 +233,14 @@
                 }
             });
             return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+        });
+
+        form.on('select(type)',function (data) {
+            type = data.value;
+            // text = data.elapsedTime[data.elem.selectedIndex].text;
+            console.log("type:"+type);
+            // console.log("text:"+text);
+
         });
 
         //表单取值
