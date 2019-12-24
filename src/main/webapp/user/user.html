@@ -2,7 +2,7 @@
 
 #define main()
 
-<table id="user" lay-filter="user" style="margin-top: 100px"></table>
+<table id="user" lay-filter="user" ></table>
 <!--添加的弹出层开始-->
 <form class="layui-form layui-form-pane" action="/user/add" method="post" id= 'form_add' style="display: none">
     <div class="layui-form-item">
@@ -47,13 +47,14 @@
 
 <script type="text/html" id="toolbarUser">
     <div class="layui-btn-container">
-        <button class="layui-btn layui-btn-sm" lay-event="add">添加</button>
+        <button class="layui-btn layui-btn-sm" lay-event="add" >添加</button>
         <button class="layui-btn layui-btn-sm dw-refresh" lay-event="refresh">刷新</button>
     </div>
 </script>
 <!--数据表格结束-->
 
 <script>
+
     layui.use('table', function() {
         var table = layui.table,
             $ = layui.jquery;

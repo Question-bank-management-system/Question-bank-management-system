@@ -77,7 +77,7 @@ public class DemoConfig extends JFinalConfig {
 		me.add("/", IndexController.class, "/index");	// 第三个参数为该Controller的视图存放路径
 		me.add("/blog", BlogController.class);			// 第三个参数省略时默认与第一个参数值相同，在此即为 "/blog"
 		me.add("/login", LoginController.class);
-		me.add("/user", UserController.class);
+		me.add("/user", UserController.class,"/user");
 		me.add("/student", StudentController.class);
 		me.add("/admin", AdminController.class);
 		me.add("/teacher", TeacherController.class);
@@ -118,7 +118,8 @@ public class DemoConfig extends JFinalConfig {
 	 * 配置全局拦截器
 	 */
 	public void configInterceptor(Interceptors me) {
-		me.add(new GlobalActionInterceptor());
+
+//		me.add(new GlobalActionInterceptor());
 	}
 	
 	/**

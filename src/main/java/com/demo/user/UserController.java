@@ -47,8 +47,9 @@ public class UserController extends Controller{
 
     public void add(){
         User user = getModel(User.class);
-        System.out.println(user.getUsername());
+        //System.out.println(user.getUsername());
         userService.add(user);
+        //int userId = (int)userService.queryByPara(user);
         redirect("/user");
     }
 
