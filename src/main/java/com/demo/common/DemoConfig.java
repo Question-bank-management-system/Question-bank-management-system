@@ -124,7 +124,7 @@ public class DemoConfig extends JFinalConfig {
 	 */
 	public void configInterceptor(Interceptors me) {
 
-//		me.add(new GlobalActionInterceptor());
+		me.add(new GlobalActionInterceptor());
 	}
 	
 	/**
