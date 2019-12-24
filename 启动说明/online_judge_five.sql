@@ -17,6 +17,8 @@
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
+CREATE DATABASE `online_judge_five`;
+USE `online_judge_five`;
 -- ----------------------------
 -- Table structure for admin_user
 -- ----------------------------
