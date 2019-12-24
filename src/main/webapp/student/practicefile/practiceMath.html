@@ -1,0 +1,37 @@
+#@layout_paper()
+
+<!--顶部提示-->
+#define top_prompt()
+<tr>
+    <td>练习科目：数学</td>
+    <td>题目数量：1</td>
+    <td>考试时长：15分钟</td>
+    <td>倒计时：</td>
+</tr>
+#end
+
+
+<!--题目部分-->
+<!--选择题-->
+#define main()
+    <div id="200" style="margin-left: 45px">
+        <br>1.简便运算8+97+996+9995+99994+999993+9999992+99999991 (5分)<br/>
+        <div style="margin-left: 30px">
+            <br>A.111111066<br/>
+            <br>B.111111056<br/>
+            <br>C.111111366<br/>
+            <br>D.111121066<br/>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <div class="style_answerOption">
+                    <input type="radio" name="option1" value="A" title="A" checked="">
+                    <input type="radio" name="option1" value="B" title="B">
+                    <input type="radio" name="option1" value="C" title="C">
+                    <input type="radio" name="option1" value="D" title="D">
+                </div>
+            </div>
+        </div>
+    </div>
+
+#end

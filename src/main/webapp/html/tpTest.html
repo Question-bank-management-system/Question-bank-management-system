@@ -1,0 +1,79 @@
+#@layout()
+<title>题趣多题库系统-首页</title>
+#define banner()
+<!-- banner部分 -->
+<div class="banner news">
+    <div class="title">
+        <p>试卷考试</p>
+        <p class="en">Test Paper</p>
+    </div>
+</div>
+#end()
+
+#define main()
+<!-- main部分 -->
+<div class="main-case">
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-inline content">
+                <div class="layui-inline case-img"><img src="../assets/res/image/testpaper2.png"></div>
+                <p class="lable">语文</p>
+                <p>坚持就是胜利</p>
+            </div>
+            <div class="layui-inline content even center">
+                <div class="layui-inline case-img"><img src="../assets/res/image/testpaper1.png"></div>
+                <p class="lable">数学</p>
+                <p>每天进步一点，365天之后远远大于1</p>
+            </div>
+            <div class="layui-inline content">
+                <div class="layui-inline case-img"><img src="../assets/res/image/testpaper3.png"></div>
+                <p class="lable">英语</p>
+                <p>如果你想做什么，那就去做</p>
+            </div>
+            <div class="layui-inline content even">
+                <div class="layui-inline case-img"><img src="../assets/res/image/testpaper4.png"></div>
+                <p class="lable">物理</p>
+                <p>简单但不简单</p>
+            </div>
+            <div class="layui-inline content center">
+                <div class="layui-inline case-img"><img src="../assets/res/image/testpaper5.png"></div>
+                <p class="lable">化学</p>
+                <p>你与知识的相遇就如同浓硫酸遇到水</p>
+            </div>
+            <div class="layui-inline content even">
+                <div class="layui-inline case-img"><img src="../assets/res/static/img/case6.jpg"></div>
+                <p class="lable">生物</p>
+                <p>一家工厂企业的商品展示网站，主要以卖高端服饰为主。主要以卖高端服饰为主。主要以卖高端服饰为主。</p>
+            </div>
+            <div class="layui-inline content">
+                <div class="layui-inline case-img"><img src="../assets/res/static/img/case7.jpg"></div>
+                <p class="lable">政治</p>
+                <p>一家工厂企业的商品展示网站，主要以卖高端服饰为主。主要以卖高端服饰为主。主要以卖高端服饰为主。</p>
+            </div>
+            <div class="layui-inline content even center">
+                <div class="layui-inline case-img"><img src="../assets/res/static/img/case8.jpg"></div>
+                <p class="lable">历史</p>
+                <p>一家工厂企业的商品展示网站，主要以卖高端服饰为主。主要以卖高端服饰为主。主要以卖高端服饰为主。</p>
+            </div>
+            <div class="layui-inline content">
+                <div class="layui-inline case-img"><img src="../assets/res/static/img/case9.jpg"></div>
+                <p class="lable">地理</p>
+                <p>一家工厂企业的商品展示网站，主要以卖高端服饰为主。主要以卖高端服饰为主。主要以卖高端服饰为主。</p>
+            </div>
+        </div>
+        <div id="casePage"></div>
+    </div>
+</div>
+
+<script src="../assets/res/layui/layui.js"></script>
+<!--[if lt IE 9]>
+<script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+<script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script>
+    layui.config({
+        base: '../res/static/js/'
+    }).use('firm');
+</script>
+
+#end

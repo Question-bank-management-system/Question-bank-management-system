@@ -1,0 +1,25 @@
+.table_examTest{
+    /*height: 80px;*/
+    margin: auto;
+    border-collapse: separate;
+    border-spacing: 120px 30px;
+    font-size: 20px;
+}
+.style_topic{
+    background-color: #E2F0D9;
+    margin-left: 45px;
+    margin-right: 45px;
+    font-size: 18px;
+}
+
+.topic_title{
+    font-size: 35px;
+    color: #0C0C0C;
+    font-family: 宋体;
+
+}
+.style_answerOption{
+    margin-top: 15px;
+    margin-left: 60px;
+}
+

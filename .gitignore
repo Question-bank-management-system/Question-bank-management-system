@@ -1,0 +1,45 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Java template
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+.gitignore
+src/main/webapp/user/
+src/test/
+target/classes/com/demo/common/model/AdminUser.class
+target/classes/com/demo/common/model/Class.class
+target/classes/com/demo/common/model/Student.class
+target/classes/com/demo/common/model/Teacher.class
+target/classes/com/demo/common/model/TestPaper.class
+target/classes/com/demo/common/model/Topic.class
+target/classes/com/demo/common/model/User.class
+target/classes/com/demo/common/model/base/BaseAdminUser.class
+target/classes/com/demo/common/model/base/BaseClass.class
+target/classes/com/demo/common/model/base/BaseStudent.class
+target/classes/com/demo/common/model/base/BaseTeacher.class
+target/classes/com/demo/common/model/base/BaseTestPaper.class
+target/classes/com/demo/common/model/base/BaseTopic.class
+target/classes/com/demo/common/model/base/BaseUser.class
+target/classes/com/demo/user/
+target/generated-sources/
