@@ -88,10 +88,10 @@ body{background: #fff;}
 
 
 /** 动态 */
-.banner.news{background: #D9DDCF no-repeat center top; background-size: cover;}
+.banner.news{background: #D9DDCF no-repeat center top; background-size: cover; height: 200px}
 .banner .title{padding-top: 170px;}
-.banner .title.active{padding-top: 120px; transition: 2s;}
-.banner .title p{color: #606060; font-size: 180px;font-family: 方正粗黑宋简体; text-align: center; line-height: 20px; letter-spacing: 5px;}
+.banner .title.active{padding-top: 90px; transition: 2s;}
+.banner .title p{color: #606060; font-size: 110px;font-family: 方正粗黑宋简体; text-align: center; line-height: 20px; letter-spacing: 5px;}
 .banner .title p.en{font-size: 20px; letter-spacing: 3px;}
 .main-news{padding: 70px 0 80px 0;}
 .main-news .content > div{padding-bottom: 40px; border-bottom: 1px dashed #eaeaea; position: relative;}

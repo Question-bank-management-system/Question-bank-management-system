@@ -1,16 +1,11 @@
 #@layout()
 #define banner()
-<div class="banner news">
-    <div class="title">
-        <p>试卷考试</p>
-        <p class="en">Test Paper</p>
-    </div>
-</div>
+<title>题趣多题库系统-个人中心</title>
 #end
 
 #define main()
 
-<table id="user" lay-filter="user" ></table>
+<table id="user" lay-filter="user" style="margin-top: 100px"></table>
 <!--添加的弹出层开始-->
 <form class="layui-form layui-form-pane" action="/user/add" method="post" id= 'form_add' style="display: none">
     <div class="layui-form-item">
