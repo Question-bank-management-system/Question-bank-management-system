@@ -26,7 +26,15 @@ public class LoginController extends Controller {
             user.setId((int) userid);
             user.setUserlv(userService.queryByUserlv((int) userid));
             setSessionAttr("user", user);
-            redirect("/");
+            if(user.getUserlv() == 1){
+                redirect("/user");
+            }else if(user.getUserlv() == 2){
+                redirect("/teacher");
+            }
+            else {
+                redirect("/");
+            }
+
         }
     }
 }
