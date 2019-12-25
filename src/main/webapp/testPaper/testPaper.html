@@ -49,6 +49,12 @@
                 edit  : 'text',
                 align : 'center'
             },{
+                field : 'endtime',
+                title : '结束时间',
+                edit  : 'text',
+                align : 'center'
+            }
+            ,{
                 field : 'full_marks',
                 title : '考试分数',
                 edit  : 'text',
@@ -144,10 +150,12 @@
 
         //日期
         laydate.render({
-            elem: '#date'
+            elem: '#date',
+            type: 'datetime'
         });
         laydate.render({
-            elem: '#date1'
+            elem: '#date1',
+            type: 'datetime'
         });
 
         //创建一个编辑器
@@ -224,7 +232,7 @@
             <label class="layui-form-label">考试时间</label>
             <div class="layui-input-inline">
                 <label>
-                    <input type="text" name="class.all_time" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                    <input type="text" name="testPaper.all_time" placeholder="请输入" autocomplete="off" class="layui-input">
                 </label>
             </div>
         </div>
@@ -232,7 +240,7 @@
             <label class="layui-form-label">开始时间</label>
             <div class="layui-input-inline">
                 <label>
-                    <input type="text" name="test_paper.starttime" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                    <input type="text" name="testPaper.starttime" placeholder="请输入" autocomplete="off" class="layui-input" id="date">
                 </label>
             </div>
         </div>
@@ -240,7 +248,7 @@
             <label class="layui-form-label">结束时间</label>
             <div class="layui-input-inline">
                 <label>
-                    <input type="text" name="test_paper.endtime" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                    <input type="text" name="testPaper.endtime" placeholder="请输入" autocomplete="off" class="layui-input" id="date1">
                 </label>
             </div>
         </div>
@@ -248,7 +256,7 @@
             <label class="layui-form-label">考试分数</label>
             <div class="layui-input-inline">
                 <label>
-                    <input type="text" name="test_paper.full_marks" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                    <input type="text" name="testPaper.full_marks" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
                 </label>
             </div>
         </div>
@@ -256,13 +264,13 @@
             <label class="layui-form-label">班级ID</label>
             <div class="layui-input-inline">
                 <label>
-                    <input type="text" name="test_paper.classid" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                    <input type="text" name="testPaper.classid" placeholder="请输入" autocomplete="off" class="layui-input">
                 </label>
             </div>
         </div>
         <div class="layui-form-item">
             <div class="layui-input-block">
-                <button type="submit" class="layui-btn">立即提交</button>
+                <button type="submit" class="layui-btn" lay-filter="*">立即提交</button>
                 <!--            <button lay-submit lay-filter="*">提交</button>-->
                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
             </div>

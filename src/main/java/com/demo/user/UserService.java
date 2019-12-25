@@ -37,21 +37,21 @@ public class UserService {
                     set("password",user1.getPassword()).set("userlv",1)
                     .set("type",user1.getType()).set("realname",user1.getRealname())
                     .set("phonenumber",user1.getPhonenumber()).set("address",user1.getAddress())
-                    .set("email",user1.getEmail()).set("birthdate",user1.getBirthdate());
+                    .set("email",user1.getEmail()).set("birthdate",user1.getBirthdate()).set("sex",user1.getSex());
         }
         else if(user1.getType().equals("teacher")){
             user.set("username",user1.getUsername()).
                     set("password",user1.getPassword()).set("userlv",2)
                     .set("type",user1.getType()).set("realname",user1.getRealname())
                     .set("phonenumber",user1.getPhonenumber()).set("address",user1.getAddress())
-                    .set("email",user1.getEmail()).set("birthdate",user1.getBirthdate());
+                    .set("email",user1.getEmail()).set("birthdate",user1.getBirthdate()).set("sex",user1.getSex());
         }
         else{
             user.set("username",user1.getUsername()).
                     set("password",user1.getPassword()).set("userlv",3)
                     .set("type",user1.getType()).set("realname",user1.getRealname())
                     .set("phonenumber",user1.getPhonenumber()).set("address",user1.getAddress())
-                    .set("email",user1.getEmail()).set("birthdate",user1.getBirthdate());
+                    .set("email",user1.getEmail()).set("birthdate",user1.getBirthdate()).set("sex",user1.getSex());
         }
         Db.save("user",user);
     }

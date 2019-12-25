@@ -28,7 +28,7 @@
         table.render({
             elem : '#user',
             toolbar : '#toolbarUser',
-            cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+            //cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
             url : '/user/list',
             cols : [ [ {
                 type : 'checkbox',
@@ -59,23 +59,33 @@
             },{
                 field : 'realname',
                 align : 'center',
+                edit:   'text',
                 title : '昵称'
             }, {
-                    field : 'phonenumber',
-                    align : 'center',
-                    title : '电话号码'
+                field : 'phonenumber',
+                align : 'center',
+                edit:   'text',
+                title : '电话号码'
             }, {
-                    field : 'address',
-                    align : 'center',
-                    title : '地址'
+                field : 'address',
+                align : 'center',
+                edit:   'text',
+                title : '地址'
             },{
                 field : 'email',
                 align : 'center',
+                edit:   'text',
                 title : '邮箱'
             },{
                 field : 'birthdate',
                 align : 'center',
+                edit:   'text',
                 title : '出生日期'
+            },{
+                field : 'sex',
+                align : 'center',
+                edit:   'text',
+                title : '性别'
             }, {
                 fixed : 'right',
                 title : '操作',
@@ -165,7 +175,8 @@
             elem: '#date'
         });
         laydate.render({
-            elem: '#date1'
+            elem: '#date1',
+            type:'date'
         });
 
         //创建一个编辑器
@@ -196,33 +207,50 @@
         });
 
         //监听提交
-        form.on('submit(*)', function(data){
-            console.log(data.elem) //被执行事件的元素DOM对象，一般为button对象
-            console.log(data.form) //被执行提交的form对象，一般在存在form标签时才会返回
-            console.log(data.field) //当前容器的全部表单字段，名值对形式：{name: value}
-            var $ = layui.$;
-            $.ajax({
-                type: 'post',
-                url: "/user/add", // ajax请求路径
-                data: JSON.stringify(data.field),
-                datatype: "json",
-                contentType: "application/json;charset=utf-8",
-                success: function (data) {
-                    layer.msg('添加成功');
-                    layer.close(index);
-                    location.reload();
-                },
-                'error':function () {
-                    layer.msg("添加失败")
-                }
-            });
-            return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+        form.on('submit(demo1)', function(data){
+            layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            })
+            return false;
         });
+
+
+        // //监听提交
+        // form.on('submit(*)', function(data){
+        //     console.log(data.elem) //被执行事件的元素DOM对象，一般为button对象
+        //     console.log(data.form) //被执行提交的form对象，一般在存在form标签时才会返回
+        //     console.log(data.field) //当前容器的全部表单字段，名值对形式：{name: value}
+        //     var $ = layui.$;
+        //     $.ajax({
+        //         type: 'post',
+        //         url: "/user/add", // ajax请求路径
+        //         data: JSON.stringify(data.field),
+        //         datatype: "json",
+        //         contentType: "application/json;charset=utf-8",
+        //         success: function (data) {
+        //             layer.msg('添加成功');
+        //             layer.close(index);
+        //             location.reload();
+        //         },
+        //         'error':function () {
+        //             layer.msg("添加失败")
+        //         }
+        //     });
+        //     return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+        // });
 
         form.on('select(type)',function (data) {
             type = data.value;
             // text = data.elapsedTime[data.elem.selectedIndex].text;
             console.log("type:"+type);
+            // console.log("text:"+text);
+
+        });
+
+        form.on('select(sex)',function (data) {
+            sex = data.value;
+            // text = data.elapsedTime[data.elem.selectedIndex].text;
+            console.log("sex:"+sex);
             // console.log("text:"+text);
 
         });
@@ -265,36 +293,46 @@
         <div class="layui-form-item">
             <label class="layui-form-label">昵称</label>
             <div class="layui-input-inline">
-                <input type="text" name="user.realname" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                <input type="text" name="user.realname" lay-verify="" placeholder="请输入" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">电话号码</label>
             <div class="layui-input-inline">
-                <input type="text" name="user.phonenumber" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                <input type="text" name="user.phonenumber" lay-verify="" placeholder="请输入" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">地址</label>
             <div class="layui-input-inline">
-                <input type="text" name="user.address" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                <input type="text" name="user.address" lay-verify="" placeholder="请输入" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">邮箱</label>
             <div class="layui-input-inline">
-                <input type="text" name="user.email" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                <input type="text" name="user.email" lay-verify="" placeholder="请输入" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">出生日期</label>
             <div class="layui-input-inline">
-                <input type="text" name="user.birthdate" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                <input type="text" name="user.birthdate" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input" id="date1">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">性别</label>
+            <div class="layui-input-inline">
+                <select name="user.sex" lay-filter="sex">
+                    <option value="男"selected>男</option>
+                    <option value="女">女</option>
+                </select>
             </div>
         </div>
         <div class="layui-form-item">
             <div class="layui-input-block">
-                <button type="submit" class="layui-btn">立即提交</button>
+                <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+<!--                <button type="submit" class="layui-btn">立即提交</button>-->
                 <!--            <button lay-submit lay-filter="*">提交</button>-->
                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
             </div>

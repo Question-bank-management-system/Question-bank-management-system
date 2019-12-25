@@ -49,7 +49,7 @@ public class TestPaperController extends Controller{
     public void add(){
         TestPaper testPaper = getModel(TestPaper.class);
         //System.out.println(user.getUsername());
-//        testPaperService.add(testPaper);
+        testPaperService.add(testPaper);
         redirect("/testPaper");
     }
 

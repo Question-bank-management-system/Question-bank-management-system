@@ -30,10 +30,10 @@ public class TestPaperService {
         Db.update("test_paper",testPaper);
     }
 
-//    public void add(TestPaper testPaper1){
-//        Record testPaper = new Record().set("all_time",testPaper1.getAllTime()).
-//                set("starttime",testPaper1.getStarttime()).set("endtime",testPaper1.getEndtime())
-//                .set("full_marks",testPaper1.getFullMarks()).set("subject_id",testPaper1.getSubjectId());
-//        Db.save("test_paper",testPaper);
-//    }
+    public void add(TestPaper testPaper1){
+        Record testPaper = new Record().set("all_time",testPaper1.getAllTime()).
+                set("starttime",testPaper1.getStarttime()).set("endtime",testPaper1.getEndtime())
+                .set("full_marks",testPaper1.getFullMarks()).set("classid",testPaper1.getClassid());
+        Db.save("test_paper",testPaper);
+    }
 }
