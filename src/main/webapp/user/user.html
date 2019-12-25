@@ -56,6 +56,26 @@
                 field : 'type',
                 align : 'center',
                 title : '类型'
+            },{
+                field : 'realname',
+                align : 'center',
+                title : '昵称'
+            }, {
+                    field : 'phonenumber',
+                    align : 'center',
+                    title : '电话号码'
+            }, {
+                    field : 'address',
+                    align : 'center',
+                    title : '地址'
+            },{
+                field : 'email',
+                align : 'center',
+                title : '邮箱'
+            },{
+                field : 'birthdate',
+                align : 'center',
+                title : '出生日期'
             }, {
                 fixed : 'right',
                 title : '操作',
@@ -239,6 +259,36 @@
                 <option value="teacher">teacher</option>
                 <option value="student" selected>student</option>
             </select>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">昵称</label>
+        <div class="layui-input-inline">
+            <input type="text" name="user.realname" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">电话号码</label>
+        <div class="layui-input-inline">
+            <input type="text" name="user.phonenumber" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">地址</label>
+        <div class="layui-input-inline">
+            <input type="text" name="user.address" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">邮箱</label>
+        <div class="layui-input-inline">
+            <input type="text" name="user.email" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">出生日期</label>
+        <div class="layui-input-inline">
+            <input type="text" name="user.birthdate" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
         </div>
     </div>
     <div class="layui-form-item">

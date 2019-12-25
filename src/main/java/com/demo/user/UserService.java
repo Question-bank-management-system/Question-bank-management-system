@@ -35,17 +35,23 @@ public class UserService {
         if (user1.getType().equals("admin")){
             user.set("username",user1.getUsername()).
                     set("password",user1.getPassword()).set("userlv",1)
-                    .set("type",user1.getType());
+                    .set("type",user1.getType()).set("realname",user1.getRealname())
+                    .set("phonenumber",user1.getPhonenumber()).set("address",user1.getAddress())
+                    .set("email",user1.getEmail()).set("birthdate",user1.getBirthdate());
         }
         else if(user1.getType().equals("teacher")){
             user.set("username",user1.getUsername()).
                     set("password",user1.getPassword()).set("userlv",2)
-                    .set("type",user1.getType());
+                    .set("type",user1.getType()).set("realname",user1.getRealname())
+                    .set("phonenumber",user1.getPhonenumber()).set("address",user1.getAddress())
+                    .set("email",user1.getEmail()).set("birthdate",user1.getBirthdate());
         }
         else{
             user.set("username",user1.getUsername()).
                     set("password",user1.getPassword()).set("userlv",3)
-                    .set("type",user1.getType());
+                    .set("type",user1.getType()).set("realname",user1.getRealname())
+                    .set("phonenumber",user1.getPhonenumber()).set("address",user1.getAddress())
+                    .set("email",user1.getEmail()).set("birthdate",user1.getBirthdate());
         }
         Db.save("user",user);
     }
