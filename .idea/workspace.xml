@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d16a4cc5-db07-4164-8cc0-5d9a39429022" name="Default Changelist" comment="完善democonfig" />
+    <list default="true" id="d16a4cc5-db07-4164-8cc0-5d9a39429022" name="Default Changelist" comment="完善democonfig">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/student/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/student/StudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/demo-config-dev.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/demo-config-dev.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseAdminUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseAdminUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseStudent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseStudent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseTeacher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseTeacher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseTestPaper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseTestPaper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/demo-config-dev.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/demo-config-dev.txt" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -33,28 +44,32 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/src/main/webapp/user/add.html&#10;G:/jfinal-4.8_demo_for_maven/jfinal_demo_for_maven/src/main/webapp/user/user.html" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/common" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.demo.common.model.base" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\Desktop\jfinal-4.7_demo_for_maven\Question-bank-management-system\src\main\webapp\common" />
+      <recent name="C:\Users\ASUS\Desktop\jfinal-4.7_demo_for_maven\Question-bank-management-system\src\main\webapp" />
+      <recent name="C:\Users\ASUS\Desktop\jfinal-4.7_demo_for_maven\Question-bank-management-system\src\main\java\com\demo" />
+      <recent name="G:\jfinal-4.8_demo_for_maven\jfinal_demo_for_maven\src\main\webapp" />
+      <recent name="G:\jfinal-4.8_demo_for_maven\jfinal_demo_for_maven\src\main\java\com\demo\user" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\jfinal-4.8_demo_for_maven\jfinal_demo_for_maven\src\main\webapp\login" />
       <recent name="G:\jfinal-4.8_demo_for_maven\jfinal_demo_for_maven\src\main\webapp" />
       <recent name="G:\jfinal-4.8_demo_for_maven\jfinal_demo_for_maven\src\main\webapp\student" />
       <recent name="G:\jfinal-4.8_demo_for_maven\jfinal_demo_for_maven\src\main\webapp\student\test" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\jfinal-4.8_demo_for_maven\jfinal_demo_for_maven\src\main\webapp" />
-      <recent name="G:\jfinal-4.8_demo_for_maven\jfinal_demo_for_maven\src\main\java\com\demo\user" />
-      <recent name="E:\linshi\Question-bank-management-system\src\main\webapp\assets\res\image" />
-      <recent name="G:\jfinal-4.8_demo_for_maven\jfinal_demo_for_maven\src\main\java\com\demo" />
-      <recent name="G:\jfinal-4.8_demo_for_maven\jfinal_demo_for_maven\src\main\webapp\assets" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.demo.common.model.base" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -120,6 +135,8 @@
       <workItem from="1577017878203" duration="7372000" />
       <workItem from="1577093340620" duration="12030000" />
       <workItem from="1577179918810" duration="258000" />
+      <workItem from="1577185247349" duration="13405000" />
+      <workItem from="1577242810852" duration="14069000" />
     </task>
     <task id="LOCAL-00001" summary="修改数据库">
       <created>1576992530743</created>
@@ -226,7 +243,98 @@
       <option name="project" value="LOCAL" />
       <updated>1577156168662</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="登录界面">
+      <created>1577186169613</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1577186169614</updated>
+    </task>
+    <task id="LOCAL-00017" summary="完善user">
+      <created>1577189114626</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1577189114626</updated>
+    </task>
+    <task id="LOCAL-00018" summary="完善democonfig">
+      <created>1577190164169</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1577190164169</updated>
+    </task>
+    <task id="LOCAL-00019" summary="完善democonfig">
+      <created>1577199774167</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1577199774167</updated>
+    </task>
+    <task id="LOCAL-00020" summary="完善democonfig">
+      <created>1577199876349</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1577199876349</updated>
+    </task>
+    <task id="LOCAL-00021" summary="完善democonfig">
+      <created>1577200052601</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1577200052601</updated>
+    </task>
+    <task id="LOCAL-00022" summary="完善user">
+      <created>1577202345303</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1577202345303</updated>
+    </task>
+    <task id="LOCAL-00023" summary="完善democonfig">
+      <created>1577242943820</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1577242943820</updated>
+    </task>
+    <task id="LOCAL-00024" summary="修改admin">
+      <created>1577245303368</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1577245303368</updated>
+    </task>
+    <task id="LOCAL-00025" summary="完善democonfig">
+      <created>1577247756074</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1577247756074</updated>
+    </task>
+    <task id="LOCAL-00026" summary="完善user.html">
+      <created>1577254358994</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1577254358994</updated>
+    </task>
+    <task id="LOCAL-00027" summary="完善democonfig">
+      <created>1577256803582</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1577256803582</updated>
+    </task>
+    <task id="LOCAL-00028" summary="完善democonfig">
+      <created>1577259111282</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1577259111282</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,6 +382,10 @@
     <MESSAGE value="修改路径" />
     <MESSAGE value="修改图标" />
     <MESSAGE value="登录界面" />
-    <option name="LAST_COMMIT_MESSAGE" value="登录界面" />
+    <MESSAGE value="完善user" />
+    <MESSAGE value="修改admin" />
+    <MESSAGE value="完善user.html" />
+    <MESSAGE value="完善democonfig" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善democonfig" />
   </component>
 </project>
