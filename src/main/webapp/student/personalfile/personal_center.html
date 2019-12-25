@@ -10,21 +10,21 @@
     <style data-merge-styles="true"></style>
     <meta charset="utf-8">
     <meta name="theme-color" content="#000000">
-    <script type="text/javascript" src="../assets/js/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js">window.__isR = true;
+    <script type="text/javascript" src="../../assets/js/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js">window.__isR = true;
     // 不支持ie9 ie10
     var isWeiXin = (/MicroMessenger/i.test(navigator.userAgent.toLowerCase()));
     if (isWeiXin) {
-        document.write('<script type="text/javascript" src="../assets/js/jweixin-1.3.0.js"><\/script>');
+        document.write('<script type="text/javascript" src="../../assets/js/jweixin-1.3.0.js"><\/script>');
     }</script>
-    <link rel="stylesheet" href="../assets/react/build/css/css_min_all.css?v=1.1.1">
-    <link rel="stylesheet" href="../assets/react/build/css/iconfont.css?v=1.1.1">
+    <link rel="stylesheet" href="../../assets/react/build/css/css_min_all.css?v=1.1.1">
+    <link rel="stylesheet" href="../../assets/react/build/css/iconfont.css?v=1.1.1">
     <link rel="stylesheet" href="https://cdn.bootcss.com/quill/1.3.7/quill.core.min.css">
     <style></style>
-    <link href="../assets/react/build/static/css/main.88fcb046.css" rel="stylesheet">
+    <link href="../../assets/react/build/static/css/main.88fcb046.css" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="blob:https://www.educoder.net/470b9e3e-349e-4de6-9fd7-3cd86da7cb6e">
-    <link rel="stylesheet" type="text/css" href="../assets/react/stylesheets/css/edu-common.css?66">
-    <link rel="stylesheet" type="text/css" href="../assets/react/stylesheets/educoder/edu-main.css?66">
-    <link rel="stylesheet" type="text/css" href="../assets/react/stylesheets/educoder/edu-all.css?66">
+    <link rel="stylesheet" type="text/css" href="../../assets/react/stylesheets/css/edu-common.css?66">
+    <link rel="stylesheet" type="text/css" href="../../assets/react/stylesheets/educoder/edu-main.css?66">
+    <link rel="stylesheet" type="text/css" href="../../assets/react/stylesheets/educoder/edu-all.css?66">
     <style data-jss="" data-meta="MuiBackdrop">
         .jss17 {
             top: 0;
@@ -224,18 +224,18 @@
                             <div class="accountInfo">
                                 <div class="headphoto mt14">
                                     <img alt="头像" id="user_avatar_show" nhname="avatar_image"
-                                         src="../assets/res/image/timg.jpg">
+                                         src="../../assets/res/image/timg.jpg">
                                     <p class="headphoto-black">修改头像</p></div>
                                 <span class="name" name="user.username">#(user.realname)</span><span class="role"></span></div>
                             <div class="accountManagement">
                                 <div class="title">账号管理</div>
                                 <ul>
-                                    <li class="navItem active">
+                                    <li class="navItem active" >
                                         <i class="iconfont icon-jibenxinxi color-grey-9 font-16"></i>基本信息
                                         <i class="status fr iconfont icon-wancheng color-green-light font-16"></i>
                                     </li>
-                                    <li class="navItem ">
-                                        <i class="iconfont icon-renzhengxinxi color-grey-9 font-16"></i>认证信息
+                                    <li class="navItem" onclick="window.location.href='/student/class_index'">
+                                        <i class="iconfont icon-renzhengxinxi color-grey-9 font-16"></i>加入班级
                                         <i class="status fr iconfont icon-wancheng color-green-light font-16"></i>
                                     </li>
                                     <li class="navItem ">
@@ -384,7 +384,13 @@
     </div>
 </div>
 <div id="picture_display" style="display:none" aria-hidden="true"></div>
-<script src="../assets/js/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js?_t=0001">
+<script>
+    var ck = function(){
+        var x = prompt ("输入昵称: ", "Tom");/*第一个变量为提示语，第二个变量为默认初始值*/
+        alert(x);
+    }
+</script>
+<script src="../../assets/js/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js?_t=0001">
     (function () {
         var _host = '/react/build/';
         /**/
@@ -392,7 +398,7 @@
         document.write('<script type="text/javascript" src="' + _host + 'static/js/main.dd46a49d.js"><\/script>');
     })()
 </script>
-<script type="text/javascript" src="../assets/js/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js"></script>
+<script type="text/javascript" src="../../assets/js/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js"></script>
 <div class="jss15 jss8 zindextest" role="dialog" id="DialogID" style="display: none;">
     <div class="jss17" aria-hidden="true"
          style="opacity: 1; will-change: opacity; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"></div>

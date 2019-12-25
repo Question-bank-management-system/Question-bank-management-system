@@ -33,7 +33,20 @@ public class StudentController extends Controller {
         User user = getSessionAttr("user");
         User user1 = userService.findById(user.getId());
         setAttr("user", user1);
-        render("personal_center.html");
+        render("personalfile/personal_center.html");
+    }
+
+    public void class_index(){
+        render("personalfile/addclass.html");
+    }
+
+    public void addclass(){
+        int classid = Integer.parseInt(getPara("classid"));
+        Student student = new Student();
+        User user = getSessionAttr("user");
+        student.setUserId(user.getId());
+        student.setClassid(classid);
+        redirect("/student/class_index");
     }
 
     //试卷考试
