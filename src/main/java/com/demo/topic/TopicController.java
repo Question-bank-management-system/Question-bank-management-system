@@ -14,7 +14,7 @@ public class TopicController extends Controller{
     TopicService topicService;
 
     public void index() {
-        setAttr("topicPage",topicService.paginate(getParaToInt(0, 1), 10));
+        //setAttr("topicPage",topicService.paginate(getParaToInt(0, 1), 10));
         render("topic.html");
     }
 

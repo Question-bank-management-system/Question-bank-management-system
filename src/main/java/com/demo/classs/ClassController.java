@@ -13,7 +13,7 @@ public class ClassController extends Controller {
     ClassService classService;
 
     public void index(){
-        setAttr("classPage",classService.paginate(getParaToInt(0, 1),10));
+        //setAttr("classPage",classService.paginate(getParaToInt(0, 1),10));
         render("class.html");
     }
 

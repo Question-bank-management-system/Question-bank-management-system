@@ -2,15 +2,15 @@
 
 #define main()
 
-<table id="student" lay-filter="student" ></table>
+<table id="teacher" lay-filter="teacher" ></table>
 <!--数据表格开始-->
 
-<script type="text/html" id="barStudent">
+<script type="text/html" id="barTeacher">
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="detail">查看</a>
     <a class="layui-btn layui-btn-xs" lay-event="del">删除</a>
 </script>
 
-<script type="text/html" id="toolbarStudent">
+<script type="text/html" id="toolbarTeacher">
     <div class="layui-btn-container">
         <button class="layui-btn layui-btn-sm dw-refresh" lay-event="refresh">刷新</button>
     </div>
@@ -23,10 +23,10 @@
             $ = layui.jquery;
         //方法级渲染，一个表格实例
         table.render({
-            elem : '#student',
-            toolbar : '#toolbarStudent',
+            elem : '#teacher',
+            toolbar : '#toolbarTeacher',
             cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
-            url : '/student/list',
+            url : '/teacher/list',
             cols : [ [ {
                 type : 'checkbox',
                 fixed : 'left'
@@ -36,10 +36,10 @@
                 align : 'center',
                 sort : true
             }, {
-                field : 'class_id',
+                field : 'subject_id',
                 align : 'center',
                 edit:   'text',
-                title : '班级ID'
+                title : '课程ID'
             }, {
                 field : 'user_id',
                 align : 'center',
@@ -49,14 +49,14 @@
                 fixed : 'right',
                 title : '操作',
                 align : 'center',
-                toolbar : '#barStudent',
+                toolbar : '#barTeacher',
                 width : 220
             }]],
             page : true,
-            id:'studentReload'
+            id:'teacherReload'
         });
 
-        table.on('toolbar(student)', function(obj) {
+        table.on('toolbar(teacher)', function(obj) {
             var data = obj.data;
             if(obj.event === "refresh"){
                 location.reload();
@@ -64,11 +64,11 @@
         });
 
         //监听表格复选框选择
-        table.on('checkbox(student)', function(obj){
+        table.on('checkbox(teacher)', function(obj){
             console.log(obj)
         });
         //监听行工具事件
-        table.on('tool(student)', function(obj) {
+        table.on('tool(teacher)', function(obj) {
             var data = obj.data;
             if (obj.event === 'detail') {
                 // window.alert("Hello");
@@ -78,7 +78,7 @@
                     var $ = layui.$;
                     $.ajax({
                         type: 'get',
-                        url: "/student/delete?id=" + data.id, // ajax请求路径
+                        url: "/teacher/delete?id=" + data.id, // ajax请求路径
                         data: JSON.stringify(data),
                         datatype: "json",
                         contentType: "application/json;charset=utf-8",
@@ -93,14 +93,14 @@
             }
         });
         //监听单元格编辑
-        table.on('edit(student)', function(obj){
+        table.on('edit(teacher)', function(obj){
             var value = obj.value //得到修改后的值
                 ,data = obj.data //得到所在行所有键值
                 ,field = obj.field; //得到字段
             var $=layui.$;
             $.ajax({
                 type: 'get',
-                url: "/student/update?id="+data.id+"&field="+field+"&value="+value, // ajax请求路径
+                url: "/teacher/update?id="+data.id+"&field="+field+"&value="+value, // ajax请求路径
                 data:JSON.stringify(data),
                 datatype:"json",
                 contentType:"application/json;charset=utf-8",
@@ -129,7 +129,7 @@
         });
 
         //创建一个编辑器
-        var editIndex = layedit.build('LAY_student_editor');
+        var editIndex = layedit.build('LAY_teacher_editor');
 
         //自定义验证规则
         form.verify({

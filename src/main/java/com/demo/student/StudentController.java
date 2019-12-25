@@ -51,7 +51,7 @@ public class StudentController extends Controller {
     public void redoNull(){render("redofile/redoNull.html");}
 
     public void index(){
-        setAttr("studentPage",studentService.paginate(getParaToInt(0, 1),10));
+        //setAttr("studentPage",studentService.paginate(getParaToInt(0, 1),10));
         render("student.html");
     }
 

@@ -14,7 +14,7 @@ public class TestPaperController extends Controller{
     TestPaperService testPaperService;
 
     public void index() {
-        setAttr("testPaperPage",testPaperService.paginate(getParaToInt(0, 1), 10));
+        //setAttr("testPaperPage",testPaperService.paginate(getParaToInt(0, 1), 10));
         render("testPaper.html");
     }
 

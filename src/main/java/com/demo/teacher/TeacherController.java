@@ -21,8 +21,12 @@ public class TeacherController extends Controller{
 
 
     public void index() {
-        setAttr("teacherPage",teacherService.paginate(getParaToInt(0, 1), 10));
+        //setAttr("teacherPage",teacherService.paginate(getParaToInt(0, 1), 10));
         render("teaIndex.html");
+    }
+
+    public void index1(){
+        render("teacher.html");
     }
 
     public void list(){
