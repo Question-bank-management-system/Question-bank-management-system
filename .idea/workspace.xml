@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d16a4cc5-db07-4164-8cc0-5d9a39429022" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/log/jfinal_demo_for_maven.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/student/StudentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/demo-config-dev.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/demo-config-dev.txt" afterDir="false" />
-    </list>
+    <list default="true" id="d16a4cc5-db07-4164-8cc0-5d9a39429022" name="Default Changelist" comment="完善democonfig" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,12 +34,17 @@
     <property name="add_unversioned_files" value="$PROJECT_DIR$/src/main/webapp/user/add.html&#10;G:/jfinal-4.8_demo_for_maven/jfinal_demo_for_maven/src/main/webapp/user/user.html" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.demo.common.model.base" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\jfinal-4.8_demo_for_maven\jfinal_demo_for_maven\src\main\webapp\login" />
+      <recent name="G:\jfinal-4.8_demo_for_maven\jfinal_demo_for_maven\src\main\webapp" />
+      <recent name="G:\jfinal-4.8_demo_for_maven\jfinal_demo_for_maven\src\main\webapp\student" />
+      <recent name="G:\jfinal-4.8_demo_for_maven\jfinal_demo_for_maven\src\main\webapp\student\test" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\jfinal-4.8_demo_for_maven\jfinal_demo_for_maven\src\main\webapp" />
@@ -52,11 +53,8 @@
       <recent name="G:\jfinal-4.8_demo_for_maven\jfinal_demo_for_maven\src\main\java\com\demo" />
       <recent name="G:\jfinal-4.8_demo_for_maven\jfinal_demo_for_maven\src\main\webapp\assets" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="G:\jfinal-4.8_demo_for_maven\jfinal_demo_for_maven\src\main\webapp\login" />
-      <recent name="G:\jfinal-4.8_demo_for_maven\jfinal_demo_for_maven\src\main\webapp" />
-      <recent name="G:\jfinal-4.8_demo_for_maven\jfinal_demo_for_maven\src\main\webapp\student" />
-      <recent name="G:\jfinal-4.8_demo_for_maven\jfinal_demo_for_maven\src\main\webapp\student\test" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.demo.common.model.base" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -71,7 +69,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.DemoConfig">
+  <component name="RunManager" selected="Application._JFinalDemoGenerator">
     <configuration name="DemoConfig" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.demo.common.DemoConfig" />
       <module name="jfinal_demo_for_maven" />
@@ -100,8 +98,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DemoConfig" />
         <item itemvalue="Application._JFinalDemoGenerator" />
+        <item itemvalue="Application.DemoConfig" />
       </list>
     </recent_temporary>
   </component>
