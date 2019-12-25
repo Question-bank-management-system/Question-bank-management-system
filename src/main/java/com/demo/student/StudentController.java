@@ -1,6 +1,8 @@
 package com.demo.student;
 
 import com.demo.common.model.Student;
+import com.demo.common.model.User;
+import com.demo.user.UserService;
 import com.jfinal.aop.Inject;
 import com.jfinal.core.Controller;
 import com.jfinal.json.Json;
@@ -10,6 +12,9 @@ import java.util.List;
 public class StudentController extends Controller {
     @Inject
     private StudentService studentService;
+
+    @Inject
+    private UserService userService;
 
 //    导航栏
     public void testPaper() {
@@ -25,6 +30,9 @@ public class StudentController extends Controller {
         render("viewResults.html");
     }
     public void personal_center() {
+        User user = getSessionAttr("user");
+        User user1 = userService.findById(user.getId());
+        setAttr("user", user1);
         render("personal_center.html");
     }
 

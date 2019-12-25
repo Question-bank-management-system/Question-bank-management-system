@@ -8,6 +8,8 @@ import com.jfinal.aop.Clear;
 import com.jfinal.aop.Inject;
 import com.jfinal.core.Controller;
 
+import java.util.Date;
+
 @Clear
 public class RegisterController extends Controller {
     @Inject
@@ -20,17 +22,27 @@ public class RegisterController extends Controller {
     public void register(){
         User user = getModel(User.class);
         if(!user.getType().equals("admin")){
-            userService.add(user);
+            Date date = new Date();
+            if(user.getType().equals("teacher")){
+                user.setUserlv(2);
+            }else if(user.getType().equals("student")){
+                user.setUserlv(3);
+            }
+            user.setAddress("缺省值");
+            user.setBirthdate(date);
+            user.setEmail("2014123456@ctgu.edu.cn");
+            user.setPhonenumber("0717-6392121");
+            user.setRealname("default");
+            user.setSex("女");
+            user.save();
             int userid = (int)userService.queryByPara(user);
-            int userlv = userService.queryByUserlv((int)userid);
             user.setId(userid);
-            user.setUserlv(userlv);
             setSessionAttr("user",user);
-            if(userlv == 2){
+            if(user.getUserlv() == 2){
                 Teacher teacher = new Teacher();
                 teacher.setUserId(userid);
                 teacher.save();
-            }else if(userlv == 3){
+            }else if(user.getUserlv() == 3){
                 Student student = new Student();
                 student.setUserId(userid);
                 student.save();

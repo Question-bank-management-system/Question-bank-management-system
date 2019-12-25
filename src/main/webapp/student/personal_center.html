@@ -138,19 +138,17 @@
 <body style="overflow: hidden; padding-right: 10px;">
 <noscript aria-hidden="true">You need to enable JavaScript to run this app.</noscript>
 <div id="md_div" style="display:none" aria-hidden="true"></div>
-<div id="root" class="page -layout-v -fit widthunit" aria-hidden="true" style="position: relative;">
+<div >
     <div class="ant-spin-nested-loading">
         <div class="ant-spin-container">
             <div class="newContainer newContainers">
                 <div class="newMain clearfix">
                     <div class="educontent df pt20">
                         <style>
-
                             .basicFormWrap {
                                 flex: 1;
                                 width: 0;
                             }
-
                             /* 左侧 */
                             .accountNav {
                                 width: 290px;
@@ -228,29 +226,30 @@
                                     <img alt="头像" id="user_avatar_show" nhname="avatar_image"
                                          src="../assets/res/image/timg.jpg">
                                     <p class="headphoto-black">修改头像</p></div>
-                                <span class="name">任以情</span><span class="role"></span></div>
+                                <span class="name" name="user.username">#(user.realname)</span><span class="role"></span></div>
                             <div class="accountManagement">
                                 <div class="title">账号管理</div>
                                 <ul>
-                                    <li class="navItem active"><i
-                                            class="iconfont icon-jibenxinxi color-grey-9 font-16"></i>基本信息<i
-                                            class="status fr iconfont icon-wancheng color-green-light font-16"></i>
+                                    <li class="navItem active">
+                                        <i class="iconfont icon-jibenxinxi color-grey-9 font-16"></i>基本信息
+                                        <i class="status fr iconfont icon-wancheng color-green-light font-16"></i>
                                     </li>
-                                    <li class="navItem "><i
-                                            class="iconfont icon-renzhengxinxi color-grey-9 font-16"></i>认证信息<i
-                                            class="status fr iconfont icon-wancheng color-green-light font-16"></i>
+                                    <li class="navItem ">
+                                        <i class="iconfont icon-renzhengxinxi color-grey-9 font-16"></i>认证信息
+                                        <i class="status fr iconfont icon-wancheng color-green-light font-16"></i>
                                     </li>
-                                    <li class="navItem "><i
-                                            class="iconfont icon-anquanshezhi color-grey-9 font-16"></i>安全设置
+                                    <li class="navItem ">
+                                        <i class="iconfont icon-anquanshezhi color-grey-9 font-16"></i>安全设置
                                     </li>
-                                    <li class="navItem "><i class="iconfont icon-lianjie color-grey-9 font-16"></i>绑定登录账号
+                                    <li class="navItem ">
+                                        <i class="iconfont icon-lianjie color-grey-9 font-16"></i>绑定登录账号
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         <div class="basicFormWrap">
                             <div>
-                                <div class="basicForm" style="background-color: white!important;padding: 15px">
+                                <div class="basicForm" style="background-color: white!important;padding: 50px">
                                     <style>
                                         .basicForm .title {
                                             font-size: 16px;
@@ -284,66 +283,83 @@
                                     </div>
                                     <form class="ant-form ant-form-horizontal">
                                         <div class="ant-row ant-form-item display formItemInline">
-                                            <div class="ant-col ant-form-item-label"><label class=""
-                                                                                            title="昵称">昵称</label>
+                                            <div class="ant-col ant-form-item-label">
+                                                <label class="" title="昵称">昵称</label>
                                             </div>
                                             <div class="ant-col ant-form-item-control-wrapper">
-                                                <div class="ant-form-item-control"><span
-                                                        class="ant-form-item-children">Anita</span></div>
+                                                <div class="ant-form-item-control">
+                                                    <span class="ant-form-item-children">#(user.username)</span>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="ant-row ant-form-item display formItemInline">
-                                            <div class="ant-col ant-form-item-label"><label class=""
-                                                                                            title="姓名">姓名</label>
+                                            <div class="ant-col ant-form-item-label">
+                                                <label class="" title="姓名">姓名</label>
                                             </div>
                                             <div class="ant-col ant-form-item-control-wrapper">
-                                                <div class="ant-form-item-control"><span
-                                                        class="ant-form-item-children">任以情</span></div>
+                                                <div class="ant-form-item-control">
+                                                    <span class="ant-form-item-children">#(user.realname)</span>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="ant-row ant-form-item display formItemInline">
-                                            <div class="ant-col ant-form-item-label"><label class=""
-                                                                                            title="性别">性别</label>
+                                            <div class="ant-col ant-form-item-label">
+                                                <label class="" title="性别">性别</label>
                                             </div>
                                             <div class="ant-col ant-form-item-control-wrapper">
-                                                <div class="ant-form-item-control"><span
-                                                        class="ant-form-item-children">女</span></div>
+                                                <div class="ant-form-item-control">
+                                                    <span class="ant-form-item-children">#(user.sex)</span>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="ant-row ant-form-item display formItemInline">
-                                            <div class="ant-col ant-form-item-label"><label class=""
-                                                                                            title="所在地">所在地</label>
+                                            <div class="ant-col ant-form-item-label">
+                                                <label class="" title="所在地">所在地</label>
                                             </div>
                                             <div class="ant-col ant-form-item-control-wrapper">
-                                                <div class="ant-form-item-control"><span
-                                                        class="ant-form-item-children">湖北　宜昌</span></div>
+                                                <div class="ant-form-item-control">
+                                                    <span class="ant-form-item-children">#(user.address)</span>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="ant-row ant-form-item display formItemInline">
-                                            <div class="ant-col ant-form-item-label"><label class=""
-                                                                                            title="职业">职业</label>
+                                            <div class="ant-col ant-form-item-label">
+                                                <label class="" title="电话号码">电话号码</label>
                                             </div>
                                             <div class="ant-col ant-form-item-control-wrapper">
-                                                <div class="ant-form-item-control"><span
-                                                        class="ant-form-item-children">学生　2017112119</span></div>
+                                                <div class="ant-form-item-control">
+                                                    <span class="ant-form-item-children">#(user.phonenumber)</span>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="ant-row ant-form-item display formItemInline mb0">
-                                            <div class="ant-col ant-form-item-label"><label class=""
-                                                                                            title="学校/单位">学校/单位</label>
+                                            <div class="ant-col ant-form-item-label">
+                                                <label class="" title="邮箱">邮箱</label>
                                             </div>
                                             <div class="ant-col ant-form-item-control-wrapper">
-                                                <div class="ant-form-item-control"><span
-                                                        class="ant-form-item-children">三峡大学</span></div>
+                                                <div class="ant-form-item-control">
+                                                    <span class="ant-form-item-children">#(user.email)</span>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="ant-row ant-form-item display formItemInline mb0">
-                                            <div class="ant-col ant-form-item-label"><label class=""
-                                                                                            title="院系/部门">院系/部门</label>
+                                            <div class="ant-col ant-form-item-label">
+                                                <label class="" title="生日">生日</label>
                                             </div>
                                             <div class="ant-col ant-form-item-control-wrapper">
-                                                <div class="ant-form-item-control"><span
-                                                        class="ant-form-item-children">计算机与信息学院</span></div>
+                                                <div class="ant-form-item-control">
+                                                    <span class="ant-form-item-children">#(user.birthdate)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ant-row ant-form-item display formItemInline mb0">
+                                            <div class="ant-col ant-form-item-label">
+                                                <label class="" title="用户身份">用户身份</label>
+                                            </div>
+                                            <div class="ant-col ant-form-item-control-wrapper">
+                                                <div class="ant-form-item-control">
+                                                    <span class="ant-form-item-children">#(user.type)</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </form>

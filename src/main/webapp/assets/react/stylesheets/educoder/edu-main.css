@@ -174,7 +174,7 @@ input::-ms-clear{display:none;}
 .newContainer{ min-height:100%; height: auto !important; height: 100%; /*IE6不识别min-height*/position: relative;}
 .educontent{width: 1200px;margin:0px auto;box-sizing: border-box}/*中间部分宽度固定为1200*/
 .newMain{ margin: 0 auto; padding-bottom: 235px; min-width:1200px;}/*padding-bottom根据底部的高度而定*/
-.newMain{ padding-bottom: 124px !important; }
+.newMain{ padding-bottom: 0 !important; }
 
 /*高度*/
 .height-100{height: 100%;}
