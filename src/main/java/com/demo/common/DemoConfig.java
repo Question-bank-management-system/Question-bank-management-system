@@ -3,12 +3,15 @@ package com.demo.common;
 import com.demo.adminUser.AdminUserController;
 import com.demo.blog.BlogController;
 import com.demo.classs.ClassController;
+import com.demo.common.model.Subject;
 import com.demo.common.model._MappingKit;
 import com.demo.index.IndexController;
 import com.demo.login.LoginController;
 import com.demo.register.RegisterController;
 import com.demo.student.StudentController;
+import com.demo.subject.SubjectController;
 import com.demo.teacher.TeacherController;
+import com.demo.tempPaper.TempPaperController;
 import com.demo.testPaper.TestPaperController;
 import com.demo.topic.TopicController;
 import com.demo.user.UserController;
@@ -85,6 +88,8 @@ public class DemoConfig extends JFinalConfig {
 		me.add("/classs", ClassController.class);
 		me.add("/testPaper", TestPaperController.class);
 		me.add("/topic", TopicController.class);
+		me.add("/subject", SubjectController.class);
+		me.add("/tempPaper", TempPaperController.class);
 	}
 	
 	public void configEngine(Engine me) {
