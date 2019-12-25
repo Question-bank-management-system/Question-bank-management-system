@@ -5,141 +5,131 @@
 #end
 
 #define main()
-<form class="layui-form layui-form-pane" action="">
-    <div class="layui-form-item">
-        <label class="layui-form-label">用户名</label>
-        <div class="layui-input-inline">
-            <input type="text" name="user.username" autocomplete="off" placeholder="请输入要修改的用户名" class="layui-input">
-        </div>
-    </div>
-    <div class="layui-form-item">
-        <label class="layui-form-label">密码</label>
-        <div class="layui-input-inline">
-            <input type="password" name="user.password" lay-verify="required" placeholder="请输入新的密码" autocomplete="off" class="layui-input">
-        </div>
-        <div class="layui-form-mid layui-word-aux">请务必填写用户名</div>
-    </div>
-    <div class="layui-form-item">
-        <label class="layui-form-label">真实姓名</label>
-        <div class="layui-input-inline">
-            <input type="text" name="user.realname" autocomplete="off" placeholder="请输入您的真实姓名" class="layui-input">
-        </div>
-    </div>
-    <div class="layui-form-item">
-        <label class="layui-form-label">电话号码</label>
-        <div class="layui-input-inline">
-            <input type="text" name="user.phonenumber" autocomplete="off" placeholder="请输入您的密码" class="layui-input">
-        </div>
-    </div>
-    <div class="layui-form-item">
-        <label class="layui-form-label">邮箱</label>
-        <div class="layui-input-inline">
-            <input type="text" name="user.email" autocomplete="off" placeholder="请输入常用的邮箱" class="layui-input">
-        </div>
-    </div>
-    <div class="layui-form-item">
-        <label class="layui-form-label">常用地址</label>
-        <div class="layui-input-inline">
-            <select name="quiz1">
-                <option value="">请选择省</option>
-                <option value="浙江" selected="">浙江省</option>
-                <option value="你的工号">江西省</option>
-                <option value="你最喜欢的老师">福建省</option>
-            </select>
-        </div>
-        <div class="layui-input-inline">
-            <select name="quiz2">
-                <option value="">请选择市</option>
-                <option value="杭州">杭州</option>
-                <option value="宁波" disabled="">宁波</option>
-                <option value="温州">温州</option>
-                <option value="温州">台州</option>
-                <option value="温州">绍兴</option>
-            </select>
-        </div>
-        <div class="layui-input-inline">
-            <select name="quiz3">
-                <option value="">请选择县/区</option>
-                <option value="西湖区">西湖区</option>
-                <option value="余杭区">余杭区</option>
-                <option value="拱墅区">临安市</option>
-            </select>
-        </div>
-        <!--由于监听器的原因，这里暂时不能实现-->
-        <div style="display: none">
-            <label class="layui-form-label">详细地址</label>
+
+<div style="margin: 0 auto;width: 800px">
+    <form class="layui-form" action="">
+        <div class="layui-form-item">
+            <label class="layui-form-label">用户名</label>
             <div class="layui-input-inline">
-                <input type="text" name="" autocomplete="off" placeholder="请输入您的住址" class="layui-input">
+                <input type="text" name="user.username" autocomplete="off"  class="layui-input">
             </div>
         </div>
-    </div>
-    <div class="layui-form-item">
-        <div class="layui-inline">
-            <label class="layui-form-label">日期选择</label>
+        <div class="layui-form-item">
+            <label class="layui-form-label">密码</label>
+            <div class="layui-input-inline">
+                <input type="password" name="user.password" lay-verify="required" autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux">请务必填写用户名</div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">真实姓名</label>
+            <div class="layui-input-inline">
+                <input type="text" name="user.realname" autocomplete="off"  class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" >电话号码</label>
+            <div class="layui-input-inline" style="color: #979797;font-size: 16px">
+                <input type="text" name="user.phonenumber" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">邮箱</label>
+            <div class="layui-input-inline">
+                <input type="text" name="user.email" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">常用地址</label>
+            <div class="layui-input-inline">
+                <select name="quiz1">
+                    <option value="">请选择省</option>
+                    <option value="浙江" selected="">浙江省</option>
+                    <option value="你的工号">江西省</option>
+                    <option value="你最喜欢的老师">福建省</option>
+                </select>
+            </div>
+            <div class="layui-input-inline">
+                <select name="quiz2">
+                    <option value="">请选择市</option>
+                    <option value="杭州">杭州</option>
+                    <option value="宁波" disabled="">宁波</option>
+                    <option value="温州">温州</option>
+                    <option value="温州">台州</option>
+                    <option value="温州">绍兴</option>
+                </select>
+            </div>
+            <div class="layui-input-inline">
+                <select name="quiz3">
+                    <option value="">请选择县/区</option>
+                    <option value="西湖区">西湖区</option>
+                    <option value="余杭区">余杭区</option>
+                    <option value="拱墅区">临安市</option>
+                </select>
+            </div>
+            <!--由于监听器的原因，这里暂时不能实现-->
+            <div style="display: none">
+                <label class="layui-form-label">详细地址</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="" autocomplete="off" placeholder="请输入您的住址" class="layui-input">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">出生日期</label>
+                <div class="layui-input-block">
+                    <input type="text" name="user.birthdate" id="date1" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">行内表单</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="number" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </div>
+        <!--范围，这个属性有点意思，这边隐藏一下-->
+        <div class="layui-form-item" style="display: none">
+            <div class="layui-inline">
+                <label class="layui-form-label">范围</label>
+                <div class="layui-input-inline" style="width: 100px;">
+                    <input type="text" name="price_min" placeholder="￥" autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-mid">-</div>
+                <div class="layui-input-inline" style="width: 100px;">
+                    <input type="text" name="price_max" placeholder="￥" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </div>
+        <!--范围结束-->
+        <div class="layui-form-item">
+            <label class="layui-form-label">选择班级</label>
+            <div class="layui-input-inline">
+                <select name="student.classid" lay-filter="aihao">
+                    <option value=""></option>
+                    <option value="0">写作</option>
+                    <option value="1" selected="">阅读</option>
+                    <option value="2">游戏</option>
+                    <option value="3">音乐</option>
+                    <option value="4">旅行</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item" pane="" style="width: 400px">
+            <label class="layui-form-label">性别</label>
             <div class="layui-input-block">
-                <input type="text" name="date" id="date1" autocomplete="off" class="layui-input">
+                <input type="radio" name="sex" value="男" title="男" checked="">
+                <input type="radio" name="sex" value="女" title="女">
+                <input type="radio" name="sex" value="禁" title="禁用" disabled="">
             </div>
         </div>
-        <div class="layui-inline">
-            <label class="layui-form-label">行内表单</label>
-            <div class="layui-input-inline">
-                <input type="text" name="number" autocomplete="off" class="layui-input">
-            </div>
+        <div class="layui-form-item">
+            <button class="layui-btn" lay-submit="" lay-filter="demo2">提交</button>
         </div>
-    </div>
-    <!--范围，这个属性有点意思，这边隐藏一下-->
-    <div class="layui-form-item" style="display: none">
-        <div class="layui-inline">
-            <label class="layui-form-label">范围</label>
-            <div class="layui-input-inline" style="width: 100px;">
-                <input type="text" name="price_min" placeholder="￥" autocomplete="off" class="layui-input">
-            </div>
-            <div class="layui-form-mid">-</div>
-            <div class="layui-input-inline" style="width: 100px;">
-                <input type="text" name="price_max" placeholder="￥" autocomplete="off" class="layui-input">
-            </div>
-        </div>
-    </div>
-    <!--范围结束-->
-    <div class="layui-form-item">
-        <label class="layui-form-label">单行选择框</label>
-        <div class="layui-input-block">
-            <select name="interest" lay-filter="aihao">
-                <option value=""></option>
-                <option value="0">写作</option>
-                <option value="1" selected="">阅读</option>
-                <option value="2">游戏</option>
-                <option value="3">音乐</option>
-                <option value="4">旅行</option>
-            </select>
-        </div>
-    </div>
+    </form>
+</div>
 
-
-    <div class="layui-form-item" pane="">
-        <label class="layui-form-label">开关-开</label>
-        <div class="layui-input-block">
-            <input type="checkbox" checked="" name="open" lay-skin="switch" lay-filter="switchTest" title="开关">
-        </div>
-    </div>
-    <div class="layui-form-item" pane="">
-        <label class="layui-form-label">单选框</label>
-        <div class="layui-input-block">
-            <input type="radio" name="sex" value="男" title="男" checked="">
-            <input type="radio" name="sex" value="女" title="女">
-            <input type="radio" name="sex" value="禁" title="禁用" disabled="">
-        </div>
-    </div>
-    <div class="layui-form-item layui-form-text">
-        <label class="layui-form-label">文本域</label>
-        <div class="layui-input-block">
-            <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
-        </div>
-    </div>
-    <div class="layui-form-item">
-        <button class="layui-btn" lay-submit="" lay-filter="demo2">跳转式提交</button>
-    </div>
-</form>
 
 <script>
     layui.use(['form', 'layedit', 'laydate'], function(){
@@ -150,7 +140,7 @@
 
         //日期
         laydate.render({
-            elem: '#date'
+            elem: '#user.birthdate'
         });
         laydate.render({
             elem: '#date1'
@@ -191,18 +181,18 @@
             return false;
         });
 
-        //表单赋值
-        layui.$('#LAY-component-form-setval').on('click', function(){
-            form.val('example', {
-                "username": "贤心" // "name": "value"
-                ,"password": "123456"
-                ,"interest": 1
-                ,"like[write]": true //复选框选中状态
-                ,"close": true //开关状态
-                ,"sex": "女"
-                ,"desc": "我爱 layui"
-            });
-        });
+        // //表单赋值
+        // layui.$('#LAY-component-form-setval').on('click', function(){
+        //     form.val('example', {
+        //         "username": "贤心" // "name": "value"
+        //         ,"password": "123456"
+        //         ,"interest": 1
+        //         ,"like[write]": true //复选框选中状态
+        //         ,"close": true //开关状态
+        //         ,"sex": "女"
+        //         ,"desc": "我爱 layui"
+        //     });
+        // });
 
         //表单取值
         layui.$('#LAY-component-form-getval').on('click', function(){
