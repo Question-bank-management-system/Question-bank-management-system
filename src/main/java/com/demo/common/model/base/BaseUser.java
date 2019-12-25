@@ -89,4 +89,12 @@ public abstract class BaseUser<M extends BaseUser<M>> extends Model<M> implement
 		return get("birthdate");
 	}
 
+	public void setSex(java.lang.String sex) {
+		set("sex", sex);
+	}
+	
+	public java.lang.String getSex() {
+		return getStr("sex");
+	}
+
 }
