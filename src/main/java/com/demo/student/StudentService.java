@@ -27,9 +27,9 @@ public class StudentService {
         Db.update("student",student);
     }
 
-    public void add(Student student1){
-        Record student = new Record().set("class_id",student1.getClassId())
-                .set("user_id",student1.getUserId());
-        Db.save("student",student);
-    }
+//    public void add(Student student1){
+//        Record student = new Record().set("class_id",student1.getClassId())
+//                .set("user_id",student1.getUserId());
+//        Db.save("student",student);
+//    }
 }

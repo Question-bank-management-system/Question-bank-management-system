@@ -86,7 +86,7 @@ public class StudentController extends Controller {
     public void add(){
         Student student = getModel(Student.class);
         //System.out.println(student.get)
-        studentService.add(student);
+//        studentService.add(student);
         redirect("/student");
     }
 }
