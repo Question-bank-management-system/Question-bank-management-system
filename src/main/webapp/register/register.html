@@ -14,7 +14,7 @@
 
     <form method="post" action="/register/register">
         <p><label class="label_input">用户名</label><input type="text" name="user.username" class="text_field"/></p>
-        <p><label class="label_input">密  码</label><input type="text" name="user.password" class="text_field"/></p>
+        <p><label class="label_input">密  码</label><input type="password" name="user.password" class="text_field"/></p>
         <div class="layui-form-item">
             <label class="layui-form-label">类型</label>
             <div class="layui-input-inline">
@@ -26,6 +26,7 @@
             </div>
         </div>
         <button type="submit" class="layui-btn" lay-submit="" lay-filter="btn_submit">注册</button>
+        <button type="button" class="layui-btn" lay-submit="" onclick="window.location.href='/login/'">登录</button>
         <button type="reset" class="layui-btn layui-btn-primary">重置</button>
 
         <!--        <div id="login_control">-->
