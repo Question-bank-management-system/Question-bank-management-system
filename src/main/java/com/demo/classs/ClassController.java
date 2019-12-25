@@ -49,6 +49,6 @@ public class ClassController extends Controller {
         Class class1 = getModel(Class.class);
         //System.out.println(student.get)
         classService.add(class1);
-        redirect("/class");
+        redirect("/classs");
     }
 }

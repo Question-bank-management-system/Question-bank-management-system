@@ -22,6 +22,7 @@ public class _MappingKit {
 		arp.addMapping("student", "id", Student.class);
 		arp.addMapping("subject", "id", Subject.class);
 		arp.addMapping("teacher", "id", Teacher.class);
+		arp.addMapping("temp_paper", "id", TempPaper.class);
 		arp.addMapping("test_paper", "id", TestPaper.class);
 		arp.addMapping("topic", "id", Topic.class);
 		arp.addMapping("user", "id", User.class);
