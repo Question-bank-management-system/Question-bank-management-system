@@ -24,8 +24,8 @@ public class StudentController extends Controller {
     public void viewResults() {
         render("viewResults.html");
     }
-    public void user() {
-        render("user.html");
+    public void personal_center() {
+        render("personal_center.html");
     }
 
     //试卷考试

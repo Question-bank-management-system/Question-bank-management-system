@@ -49,4 +49,36 @@ public abstract class BaseUser<M extends BaseUser<M>> extends Model<M> implement
 		return getStr("type");
 	}
 
+	public void setRealname(java.lang.String realname) {
+		set("realname", realname);
+	}
+	
+	public java.lang.String getRealname() {
+		return getStr("realname");
+	}
+
+	public void setPhonenumber(java.lang.String phonenumber) {
+		set("phonenumber", phonenumber);
+	}
+	
+	public java.lang.String getPhonenumber() {
+		return getStr("phonenumber");
+	}
+
+	public void setAddress(java.lang.String address) {
+		set("address", address);
+	}
+	
+	public java.lang.String getAddress() {
+		return getStr("address");
+	}
+
+	public void setEmail(java.lang.String email) {
+		set("email", email);
+	}
+	
+	public java.lang.String getEmail() {
+		return getStr("email");
+	}
+
 }
