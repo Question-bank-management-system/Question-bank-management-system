@@ -56,7 +56,7 @@ public class UserService {
         Db.save("user",user);
     }
     public Object queryByPara(User user){
-        return Db.queryInt("select id from user where username = ? and password = ?", user.getUsername(),user.getPassword());
+        return Db.queryInt("select id from user where username = ? and password = ? and type = ?", user.getUsername(),user.getPassword(),user.getType());
     }
 
     public int queryByUserlv(int id){
