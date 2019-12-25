@@ -21,33 +21,35 @@ public class RegisterController extends Controller {
 
     public void register(){
         User user = getModel(User.class);
-        if(!user.getType().equals("admin")){
-            Date date = new Date();
-            if(user.getType().equals("teacher")){
-                user.setUserlv(2);
-            }else if(user.getType().equals("student")){
-                user.setUserlv(3);
+        Object id = userService.queryByPara(user);
+        if(id == null){
+            if(!user.getType().equals("admin")){
+                if(user.getType().equals("teacher")){
+                    user.setUserlv(2);
+                }else if(user.getType().equals("student")){
+                    user.setUserlv(3);
+                }
+                user.save();
+                int userid = (int)userService.queryByPara(user);
+                user.setId(userid);
+                User user1 = userService.findById(userid);
+                //写到session中
+                setSessionAttr("user",user1);
+
+                if(user.getUserlv() == 2){
+                    Teacher teacher = new Teacher();
+                    teacher.setUserId(userid);
+                    teacher.save();
+                }else if(user.getUserlv() == 3){
+                    Student student = new Student();
+                    student.setUserId(userid);
+                    student.save();
+                }
             }
-            user.setAddress("缺省值");
-            user.setBirthdate(date);
-            user.setEmail("2014123456@ctgu.edu.cn");
-            user.setPhonenumber("0717-6392121");
-            user.setRealname("default");
-            user.setSex("女");
-            user.save();
-            int userid = (int)userService.queryByPara(user);
-            user.setId(userid);
-            setSessionAttr("user",user);
-            if(user.getUserlv() == 2){
-                Teacher teacher = new Teacher();
-                teacher.setUserId(userid);
-                teacher.save();
-            }else if(user.getUserlv() == 3){
-                Student student = new Student();
-                student.setUserId(userid);
-                student.save();
-            }
+            redirect("/");
         }
-        redirect("/");
+        else{
+            redirect("/register");
+        }
     }
 }
