@@ -81,4 +81,12 @@ public abstract class BaseUser<M extends BaseUser<M>> extends Model<M> implement
 		return getStr("email");
 	}
 
+	public void setBirthdate(java.util.Date birthdate) {
+		set("birthdate", birthdate);
+	}
+	
+	public java.util.Date getBirthdate() {
+		return get("birthdate");
+	}
+
 }
