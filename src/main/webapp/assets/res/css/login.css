@@ -1,6 +1,6 @@
 #login_frame {
     width: 400px;
-    height: 260px;
+    height: 350px;
     padding: 13px;
 
     position: absolute;
@@ -35,6 +35,11 @@ form p > * {
     border-bottom-left-radius: 5px;
 }
 
+.label_input_type{
+    display: inline-block;
+
+}
+
 .text_field {
     font-size: 18px;
     font-family: 宋体;
@@ -43,6 +48,10 @@ form p > * {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     border: 0;
+}
+
+#select_div{
+    display: inline-flex;
 }
 
 #btn_login {

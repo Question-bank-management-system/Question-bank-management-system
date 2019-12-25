@@ -5,30 +5,258 @@
 #end
 
 #define main()
+<style>
+    .accountNav {
+        width: 290px;
+        box-shadow: 0 4px 9px 0 rgba(11, 62, 120, 0.21);
+        border-radius: 2px;
+        padding-top: 8px;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        margin-right: 20px;
+        height: 460px;
+    }
 
-<div style="margin: 0 auto;width: 800px">
+    .fl {
+        float: left !important;
+    }
+</style>
+<div class="accountNav fl">
+    <style>
+        .accountInfo {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .accountInfo .name {
+            color: #05101A;
+            font-size: 24px;
+            height: 36px;
+        }
+
+        .accountInfo .role {
+            color: #666666;
+            font-size: 14px;
+        }
+
+        .accountManagement .title {
+            color: #05101A;
+            font-size: 18px;
+            font-weight: 400;
+            padding: 10px 28px;
+            margin-top: 6px;
+        }
+
+        .accountManagement .navItem {
+            font-size: 16px;
+            padding: 6px 0;
+            padding-left: 30px;
+            border-left: 2px solid #fff;
+            cursor: pointer;
+            color: #4D4D4D;
+        }
+
+        .accountManagement .navItem i {
+            margin-top: -4px;
+            display: inline-block;
+            margin-right: 7px;
+        }
+
+        .accountManagement .navItem i.status {
+            margin-top: 1px;
+            margin-right: 24px;
+        }
+
+        .accountManagement .navItem.active {
+            border-left: 2px solid #4CACFF;
+            background: #E6F3FF;
+        }
+
+        .accountManagement .navItem.active i:first-child {
+            color: #4CACFF !important;
+        }
+
+        .color-green-light {
+            color: #45E660 !important;
+        }
+    </style>
+    <div class="accountInfo">
+        <div class="headphoto mt14">
+            <style>
+                .headphoto:hover .headphoto-black {
+                    display: block;
+                }
+            </style>
+            <img alt="头像" id="user_avatar_show" nhname="avatar_image" src="../assets/res/image/timg.jpg"
+                 style="width: 270px">
+            <p class="headphoto-black">修改头像</p>
+        </div>
+        <span class="name">任以情</span>
+        <span class="role"></span>
+    </div>
+    <div class="accountManagement">
+        <div class="title">账号管理</div>
+        <ul>
+            <li class="navItem active">
+                <i class="iconfont icon-jibenxinxi color-grey-9 font-16"></i>基本信息
+                <i class="status fr iconfont icon-wancheng color-green-light font-16"></i>
+            </li>
+            <li class="navItem ">
+                <i class="iconfont icon-renzhengxinxi color-grey-9 font-16"></i>认证信息
+                <i class="status fr iconfont icon-wancheng color-green-light font-16"></i></li>
+            <li class="navItem ">
+                <i class="iconfont icon-anquanshezhi color-grey-9 font-16"></i>安全设置
+            </li>
+            <li class="navItem ">
+                <i class="iconfont icon-lianjie color-grey-9 font-16"></i>绑定登录账号
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="basicFormWrap">
+    <div>
+        <div class="basicForm">
+            <style>
+                .formItemInline {
+                    display: flex;
+                }
+
+                .formItemInline .ant-form-item-control-wrapper {
+                    display: inline-block;
+                }
+
+                .basicForm .title {
+                    font-size: 16px;
+                    padding-left: 30px;
+                    margin-bottom: 10px;
+                }
+
+                .basicForm .ant-form-item-label {
+                    width: 100px;
+                    padding-right: 10px;
+                }
+
+                .basicForm .ant-form-item-label label {
+                    color: #979797
+                }
+
+                .basicForm .display {
+                    margin: 0
+                }
+
+                .titleWrap {
+                    display: flex;
+                    justify-content: space-between;
+                }
+            </style>
+            <div class="titleWrap">
+                <div class="title">基本信息</div>
+                <button type="button" class="ant-btn ant-btn-primary ant-btn-background-ghost"
+                        style="margin-right: 16px;">
+                    <span>修 改</span>
+                </button>
+            </div>
+            <form class="ant-form ant-form-horizontal">
+                <div class="ant-row ant-form-item display formItemInline">
+                    <div class="ant-col ant-form-item-label">
+                        <label class="" title="昵称">昵称</label>
+                    </div>
+                    <div class="ant-col ant-form-item-control-wrapper">
+                        <div class="ant-form-item-control">
+                            <span class="ant-form-item-children">Anita</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ant-row ant-form-item display formItemInline">
+                    <div class="ant-col ant-form-item-label">
+                        <label class="" title="姓名">姓名</label>
+                    </div>
+                    <div class="ant-col ant-form-item-control-wrapper">
+                        <div class="ant-form-item-control">
+                            <span class="ant-form-item-children">任以情</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ant-row ant-form-item display formItemInline">
+                    <div class="ant-col ant-form-item-label">
+                        <label class="" title="性别">性别</label>
+                    </div>
+                    <div class="ant-col ant-form-item-control-wrapper">
+                        <div class="ant-form-item-control">
+                            <span class="ant-form-item-children">女</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ant-row ant-form-item display formItemInline">
+                    <div class="ant-col ant-form-item-label">
+                        <label class="" title="所在地">所在地</label>
+                    </div>
+                    <div class="ant-col ant-form-item-control-wrapper">
+                        <div class="ant-form-item-control">
+                            <span class="ant-form-item-children">湖北　宜昌</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ant-row ant-form-item display formItemInline">
+                    <div class="ant-col ant-form-item-label">
+                        <label class="" title="职业">职业</label>
+                    </div>
+                    <div class="ant-col ant-form-item-control-wrapper">
+                        <div class="ant-form-item-control">
+                            <span class="ant-form-item-children">学生　2017112119</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ant-row ant-form-item display formItemInline mb0">
+                    <div class="ant-col ant-form-item-label">
+                        <label class="" title="学校/单位">学校/单位</label>
+                    </div>
+                    <div class="ant-col ant-form-item-control-wrapper">
+                        <div class="ant-form-item-control">
+                            <span class="ant-form-item-children">三峡大学</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ant-row ant-form-item display formItemInline mb0">
+                    <div class="ant-col ant-form-item-label">
+                        <label class="" title="院系/部门">院系/部门</label></div>
+                    <div class="ant-col ant-form-item-control-wrapper">
+                        <div class="ant-form-item-control"><span class="ant-form-item-children">计算机与信息学院</span></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div style="color: rgb(152, 152, 152); margin-left: 20px;">* 我们确保你所提供的信息均处于严格保密状态，不会泄露</div>
+    </div>
+</div>
+
+<div style="width: 700px;margin-left: 300px">
     <form class="layui-form" action="">
         <div class="layui-form-item">
             <label class="layui-form-label">用户名</label>
             <div class="layui-input-inline">
-                <input type="text" name="user.username" autocomplete="off"  class="layui-input">
+                <input type="text" name="user.username" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">密码</label>
             <div class="layui-input-inline">
-                <input type="password" name="user.password" lay-verify="required" autocomplete="off" class="layui-input">
+                <input type="password" name="user.password" lay-verify="required" autocomplete="off"
+                       class="layui-input">
             </div>
             <div class="layui-form-mid layui-word-aux">请务必填写用户名</div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">真实姓名</label>
             <div class="layui-input-inline">
-                <input type="text" name="user.realname" autocomplete="off"  class="layui-input">
+                <input type="text" name="user.realname" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label" >电话号码</label>
+            <label class="layui-form-label">电话号码</label>
             <div class="layui-input-inline" style="color: #979797;font-size: 16px">
                 <input type="text" name="user.phonenumber" autocomplete="off" class="layui-input">
             </div>
@@ -132,11 +360,11 @@
 
 
 <script>
-    layui.use(['form', 'layedit', 'laydate'], function(){
+    layui.use(['form', 'layedit', 'laydate'], function () {
         var form = layui.form
-            ,layer = layui.layer
-            ,layedit = layui.layedit
-            ,laydate = layui.laydate;
+            , layer = layui.layer
+            , layedit = layui.layedit
+            , laydate = layui.laydate;
 
         //日期
         laydate.render({
@@ -151,30 +379,30 @@
 
         //自定义验证规则
         form.verify({
-            title: function(value){
-                if(value.length < 5){
+            title: function (value) {
+                if (value.length < 5) {
                     return '标题至少得5个字符啊';
                 }
             }
-            ,pass: [
+            , pass: [
                 /^[\S]{6,12}$/
-                ,'密码必须6到12位，且不能出现空格'
+                , '密码必须6到12位，且不能出现空格'
             ]
-            ,content: function(value){
+            , content: function (value) {
                 layedit.sync(editIndex);
             }
         });
 
         //监听指定开关
-        form.on('switch(switchTest)', function(data){
-            layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'), {
+        form.on('switch(switchTest)', function (data) {
+            layer.msg('开关checked：' + (this.checked ? 'true' : 'false'), {
                 offset: '6px'
             });
             layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
         });
 
         //监听提交
-        form.on('submit(demo1)', function(data){
+        form.on('submit(demo1)', function (data) {
             layer.alert(JSON.stringify(data.field), {
                 title: '最终的提交信息'
             })
@@ -195,7 +423,7 @@
         // });
 
         //表单取值
-        layui.$('#LAY-component-form-getval').on('click', function(){
+        layui.$('#LAY-component-form-getval').on('click', function () {
             var data = form.val('example');
             alert(JSON.stringify(data));
         });
