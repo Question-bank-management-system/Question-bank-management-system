@@ -11,7 +11,7 @@
  Target Server Version : 100408
  File Encoding         : 65001
 
- Date: 25/12/2019 13:27:18
+ Date: 25/12/2019 14:09:26
 */
 
 SET NAMES utf8mb4;
@@ -93,6 +93,21 @@ CREATE TABLE `teacher`  (
   INDEX `fk_user_teacher_id`(`user_id`) USING BTREE,
   CONSTRAINT `fk_user_teacher_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Table structure for temp_paper
+-- ----------------------------
+DROP TABLE IF EXISTS `temp_paper`;
+CREATE TABLE `temp_paper`  (
+  `id` int(11) NOT NULL,
+  `test_paperid` int(11) NULL DEFAULT NULL,
+  `topicid` int(11) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `fk_test_paper_temp_paper_id`(`test_paperid`) USING BTREE,
+  INDEX `fk_topic_temp_paper_id`(`topicid`) USING BTREE,
+  CONSTRAINT `fk_test_paper_temp_paper_id` FOREIGN KEY (`test_paperid`) REFERENCES `test_paper` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_topic_temp_paper_id` FOREIGN KEY (`topicid`) REFERENCES `topic` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for test_paper
