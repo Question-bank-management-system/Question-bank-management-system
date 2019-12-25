@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-<<<<<<< Updated upstream
-    <list default="true" id="d16a4cc5-db07-4164-8cc0-5d9a39429022" name="Default Changelist" comment="完善democonfig">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/student/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/student/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/demo-config-dev.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/demo-config-dev.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseAdminUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseAdminUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseStudent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseStudent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseTeacher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseTeacher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseTestPaper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseTestPaper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/demo-config-dev.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/demo-config-dev.txt" afterDir="false" />
-=======
+    <list default="true" id="d16a4cc5-db07-4164-8cc0-5d9a39429022" name="Default Changelist" comment="完善democonfig" />
+    <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/student/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/student/StudentService.java" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/src/main/resources/demo-config-dev.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/demo-config-dev.txt" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseAdminUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseAdminUser.class" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseStudent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseStudent.class" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseTeacher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseTeacher.class" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseTestPaper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseTestPaper.class" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/common/model/base/BaseUser.class" afterDir="false" />
+    <change beforePath="$PROJECT_DIR$/target/classes/demo-config-dev.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/demo-config-dev.txt" afterDir="false" />
     <list default="true" id="d16a4cc5-db07-4164-8cc0-5d9a39429022" name="Default Changelist" comment="个人中心页面修改以及数据库版本更新">
       <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/jweixin-1.3.0.js" afterDir="false" />
@@ -30,7 +28,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/res/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/res/css/login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/student/personal_center.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/student/personal_center.html" afterDir="false" />
->>>>>>> Stashed changes
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,10 +43,7 @@
       <list>
         <option value="Class" />
         <option value="HTML File" />
-<<<<<<< Updated upstream
-=======
         <option value="JavaScript File" />
->>>>>>> Stashed changes
       </list>
     </option>
   </component>
@@ -67,17 +61,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/src/main/webapp/user/add.html&#10;G:/jfinal-4.8_demo_for_maven/jfinal_demo_for_maven/src/main/webapp/user/user.html" />
     <property name="aspect.path.notification.shown" value="true" />
-<<<<<<< Updated upstream
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/common" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/assets" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-=======
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/assets" />
->>>>>>> Stashed changes
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -86,19 +76,16 @@
       <recent name="com.demo.common.model.base" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-<<<<<<< Updated upstream
       <recent name="C:\Users\ASUS\Desktop\jfinal-4.7_demo_for_maven\Question-bank-management-system\src\main\webapp\common" />
       <recent name="C:\Users\ASUS\Desktop\jfinal-4.7_demo_for_maven\Question-bank-management-system\src\main\webapp" />
       <recent name="C:\Users\ASUS\Desktop\jfinal-4.7_demo_for_maven\Question-bank-management-system\src\main\java\com\demo" />
       <recent name="G:\jfinal-4.8_demo_for_maven\jfinal_demo_for_maven\src\main\webapp" />
       <recent name="G:\jfinal-4.8_demo_for_maven\jfinal_demo_for_maven\src\main\java\com\demo\user" />
-=======
       <recent name="G:\jfinal-4.8_demo_for_maven\jfinal_demo_for_maven\src\main\webapp\assets" />
       <recent name="G:\jfinal-4.8_demo_for_maven\jfinal_demo_for_maven\src\main\webapp" />
       <recent name="G:\jfinal-4.8_demo_for_maven\jfinal_demo_for_maven\src\main\java\com\demo\user" />
       <recent name="E:\linshi\Question-bank-management-system\src\main\webapp\assets\res\image" />
       <recent name="G:\jfinal-4.8_demo_for_maven\jfinal_demo_for_maven\src\main\java\com\demo" />
->>>>>>> Stashed changes
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\jfinal-4.8_demo_for_maven\jfinal_demo_for_maven\src\main\webapp\assets\react\stylesheets\educoder" />
@@ -279,7 +266,6 @@
       <option name="project" value="LOCAL" />
       <updated>1577156168662</updated>
     </task>
-<<<<<<< Updated upstream
     <task id="LOCAL-00016" summary="登录界面">
       <created>1577186169613</created>
       <option name="number" value="00016" />
@@ -372,7 +358,6 @@
       <updated>1577259111282</updated>
     </task>
     <option name="localTasksCounter" value="29" />
-=======
     <task id="LOCAL-00016" summary="拦截器">
       <created>1577198476364</created>
       <option name="number" value="00016" />
@@ -472,8 +457,6 @@
       <updated>1577256694676</updated>
     </task>
     <option name="localTasksCounter" value="30" />
->>>>>>> Stashed changes
-    <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -519,13 +502,11 @@
     <MESSAGE value="修改路径" />
     <MESSAGE value="修改图标" />
     <MESSAGE value="登录界面" />
-<<<<<<< Updated upstream
     <MESSAGE value="完善user" />
     <MESSAGE value="修改admin" />
     <MESSAGE value="完善user.html" />
     <MESSAGE value="完善democonfig" />
     <option name="LAST_COMMIT_MESSAGE" value="完善democonfig" />
-=======
     <MESSAGE value="拦截器" />
     <MESSAGE value="修改数据库" />
     <MESSAGE value="修改DemoConfig" />
@@ -548,6 +529,5 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
->>>>>>> Stashed changes
   </component>
 </project>
