@@ -49,6 +49,10 @@ public class StudentController extends Controller {
         redirect("/student/class_index");
     }
 
+    public void list_myclass(){
+        render("/student/mycalss.html");
+    }
+
     //试卷考试
     public void examChinese(){render("examfile/examChinese.html");}
     public void examMath(){render("examfile/examMath.html");}
