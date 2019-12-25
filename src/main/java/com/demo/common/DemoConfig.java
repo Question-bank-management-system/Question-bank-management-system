@@ -1,9 +1,8 @@
 package com.demo.common;
 
-import com.demo.admin.AdminController;
+import com.demo.adminUser.AdminUserController;
 import com.demo.blog.BlogController;
 import com.demo.classs.ClassController;
-import com.demo.common.model.Teacher;
 import com.demo.common.model._MappingKit;
 import com.demo.index.IndexController;
 import com.demo.login.LoginController;
@@ -81,7 +80,7 @@ public class DemoConfig extends JFinalConfig {
 		me.add("/register", RegisterController.class);
 		me.add("/user", UserController.class);
 		me.add("/student", StudentController.class);
-		me.add("/admin", AdminController.class);
+		me.add("/adminUser", AdminUserController.class);
 		me.add("/teacher", TeacherController.class);
 		me.add("/classs", ClassController.class);
 		me.add("/testPaper", TestPaperController.class);

@@ -1,4 +1,4 @@
-package com.demo.admin;
+package com.demo.adminUser;
 
 import com.demo.common.model.AdminUser;
 import com.jfinal.plugin.activerecord.Db;
@@ -6,7 +6,7 @@ import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 
 
-public class AdminService {
+public class AdminUserService {
     private AdminUser dao = new AdminUser().dao();
 
     public Page<AdminUser> paginate(int pageNumber, int pageSize){

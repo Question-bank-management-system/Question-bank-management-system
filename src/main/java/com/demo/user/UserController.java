@@ -1,6 +1,5 @@
 package com.demo.user;
 
-import com.demo.admin.AdminService;
 import com.demo.common.model.AdminUser;
 import com.demo.common.model.Student;
 import com.demo.common.model.Teacher;
