@@ -3,32 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>题趣多题库系统-登录</title>
-
     <link rel="stylesheet" type="text/css" href="../assets/res/css/login.css"/>
 </head>
 
 <body style="background-image: url(../assets/res/image/login.png); background-size: 100%">
 <div id="login_frame">
 
-    <p id="image_logo"><img src="../assets/res/image/logo.png"></p>
+<!--    <p id="image_logo"><img src="../assets/res/image/logo.png"></p>-->
 
     <form method="post" action="/login/verify">
-        <p><label class="label_input">用户名</label><input type="text" name="user.username" class="text_field"/></p>
-        <p><label class="label_input">密  码</label><input type="password" name="user.password" class="text_field"/></p>
+
         <div id="select_div">
-            <label class="label_input_type">类型</label>
-            <div class="select_class">
+            <label class="label_input_type"></label>
+            &nbsp;&nbsp;&nbsp;
+            <div class="select_login">
                 <select name="user.type" lay-filter="type">
+                    <option value="" selected>登录类型</option>
                     <option value="admin">admin</option>
                     <option value="teacher">teacher</option>
-                    <option value="student" selected>student</option>
+                    <option value="student">student</option>
                 </select>
             </div>
+
         </div>
-        <div>
-            <button type="submit" lay-submit="" lay-filter="btn_submit">登录</button>
-            <button type="reset"  lay-submit="">重置</button>
-            <button type="button" onclick="window.location.href='/register/'" >注册</button>
+
+
+
+        <p><label class="label_input">用户名</label><input type="text" name="user.username" class="text_field"/></p>
+        <p><label class="label_input">密  码</label><input type="password" name="user.password" class="text_field"/></p>
+
+        <div style="margin-left: 20px;margin-top: 30px">
+            <button class="btn_login" type="submit" lay-submit="" lay-filter="btn_submit" style="margin-right: 10px">登录</button>
+            <button class="btn_login" type="reset"  lay-submit=""style="margin-right: 10px">重置</button>
+            <button class="btn_login" type="button" onclick="window.location.href='/register/'" style="margin-right: 10px">注册</button>
         </div>
 
 <!--        <div id="login_control">-->
