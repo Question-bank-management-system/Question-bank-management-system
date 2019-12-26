@@ -22,16 +22,16 @@
 <script>
 
     function f1(subject_id) {
-        var sId = subject_id;
+        var id = subject_id;
         // console.log("subject_id:"+subject_id);
         var title = "HEllo";
         var $ = layui.jquery;
         $.ajax({
             url:'/subject/list?page=1&limit=10',
             dataType:'json',
-            async:true,
+            async:false,
             success:function (data) {
-                switch (sId) {
+                switch (id) {
                     case 1: title = "语文";break;
                     case 2: title = "数学";break;
                     case 3: title = "英语";break;
@@ -91,7 +91,7 @@
                 align : 'center'
             },{
                 field : 'subject_id',
-                title : '科目ID',
+                title : '科目名称',
                 edit  : 'text',
                 align : 'center',
                 templet:'<div>{{f1(d.subject_id)}}</div>'
