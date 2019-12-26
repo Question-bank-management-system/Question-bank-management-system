@@ -25,4 +25,12 @@ public abstract class BaseClass<M extends BaseClass<M>> extends Model<M> impleme
 		return getInt("teacher_id");
 	}
 
+	public void setTestPaperId(java.lang.Integer testPaperId) {
+		set("test_paper_id", testPaperId);
+	}
+	
+	public java.lang.Integer getTestPaperId() {
+		return getInt("test_paper_id");
+	}
+
 }

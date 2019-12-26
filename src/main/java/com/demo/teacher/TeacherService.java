@@ -32,4 +32,8 @@ public class TeacherService {
                 .set("subject_id",teacher1.getSubjectId());
         Db.save("teacher",teacher);
     }
+
+    public int queryUserid(int teacher_id) {
+        return Db.queryInt("select user_id from teacher where id = ?", teacher_id);
+    }
 }

@@ -36,10 +36,14 @@ public class StudentService {
         Db.update("student",student);
     }
 
-    public void add(Student student1){
-        Record student = new Record().set("user_id",student1.getUserId())
-                .set("test_paperid",student1.getTestPaperid())
-                .set("classid",student1.getClassid()).set("score",student1.getScore());
-        Db.save("student",student);
+//    public void add(Student student1){
+//        Record student = new Record().set("user_id",student1.getUserId())
+//                .set("test_paperid",student1.getTestPaperid())
+//                .set("classid",student1.getClassid()).set("score",student1.getScore());
+//        Db.save("student",student);
+//    }
+
+    int queryCount(int classid) {
+        return Db.queryInt("select count(*) from student where classid = ?",classid);
     }
 }

@@ -76,6 +76,12 @@ public class StudentController extends Controller {
         renderJson(jsons);
     }
 
+    public void queryCount(){
+        int classid = getParaToInt("class_id");
+        int count = studentService.queryCount(classid);
+        renderJson("count",count);
+    }
+
     //试卷考试
     public void examChinese(){render("examfile/examChinese.html");}
     public void examMath(){render("examfile/examMath.html");}

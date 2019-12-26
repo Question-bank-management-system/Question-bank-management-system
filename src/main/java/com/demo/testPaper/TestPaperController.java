@@ -46,11 +46,11 @@ public class TestPaperController extends Controller{
         testPaperService.update(id, field, value);
     }
 
-    public void add(){
-        TestPaper testPaper = getModel(TestPaper.class);
-        //System.out.println(user.getUsername());
-        testPaperService.add(testPaper);
-        redirect("/testPaper");
-    }
+//    public void add(){
+//        TestPaper testPaper = getModel(TestPaper.class);
+//        //System.out.println(user.getUsername());
+//        testPaperService.add(testPaper);
+//        redirect("/testPaper");
+//    }
 
 }

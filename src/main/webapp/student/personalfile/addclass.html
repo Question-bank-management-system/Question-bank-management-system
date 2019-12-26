@@ -42,8 +42,14 @@
                 sort  : true
             }, {
                 field : 'teacher_id',
-                title : '教师ID',
-                align : 'center'
+                title : '教师姓名',
+                align : 'center',
+                templet:'<div>{{f1(d.teacher_id)}}</div>'
+            }, {
+                field : 'class_count',
+                title : '班级人数',
+                align : 'center',
+                templet:'<div>{{queryClassCount(d.id)}}</div>'
             }, {
                 fixed : 'right',
                 title : '操作',
@@ -105,6 +111,42 @@
             layer.msg('[ID: '+ data.id +'] ' + field + ' 字段更改为：'+ value);
         });
     });
+
+    function f1(teacher_id) {
+        var title = "图灵";
+        var $ = layui.jquery;
+        $.ajax({
+            url:'/user/queryName?teacher_id='+teacher_id,
+            dataType:'json',
+            async:false,
+            success:function (data) {
+                $.each(data,function (index,obj) {
+                    title = data.teacher_name;
+                });
+            },
+            error:function (data) {
+            }
+        });
+        return title;
+    }
+
+    function queryClassCount(class_id) {
+        var count = "0";
+        var $ = layui.jquery;
+        $.ajax({
+            url:'/student/queryCount?class_id='+class_id,
+            dataType:'json',
+            async:false,
+            success:function (data) {
+                $.each(data,function (index,obj) {
+                    title = data.count;
+                });
+            },
+            error:function (data) {
+            }
+        });
+        return title;
+    }
 </script>
 
 <script>

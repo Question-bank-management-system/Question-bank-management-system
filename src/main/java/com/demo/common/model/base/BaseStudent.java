@@ -25,28 +25,12 @@ public abstract class BaseStudent<M extends BaseStudent<M>> extends Model<M> imp
 		return getInt("user_id");
 	}
 
-	public void setTestPaperid(java.lang.Integer testPaperid) {
-		set("test_paperid", testPaperid);
-	}
-	
-	public java.lang.Integer getTestPaperid() {
-		return getInt("test_paperid");
-	}
-
 	public void setClassid(java.lang.Integer classid) {
 		set("classid", classid);
 	}
 	
 	public java.lang.Integer getClassid() {
 		return getInt("classid");
-	}
-
-	public void setScore(java.lang.Integer score) {
-		set("score", score);
-	}
-	
-	public java.lang.Integer getScore() {
-		return getInt("score");
 	}
 
 }

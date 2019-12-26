@@ -4,6 +4,7 @@ import com.demo.common.model.AdminUser;
 import com.demo.common.model.Student;
 import com.demo.common.model.Teacher;
 import com.demo.common.model.User;
+import com.demo.teacher.TeacherService;
 import com.jfinal.aop.Inject;
 import com.jfinal.core.Controller;
 import com.jfinal.json.Json;
@@ -14,6 +15,9 @@ public class UserController extends Controller{
 
     @Inject
     UserService userService;
+
+    @Inject
+    TeacherService teacherService;
 
     public void index() {
 //        setAttr("userPage",userService.paginate(getParaToInt(0, 1), 10));
@@ -82,6 +86,13 @@ public class UserController extends Controller{
         String type = getPara("type");
         System.out.println(username);
         System.out.println(type);
+    }
+
+    public void queryName(){
+        int teacher_id = getParaToInt("teacher_id");
+        int user_id = teacherService.queryUserid(teacher_id);
+        String userName = userService.queryName(user_id);
+        renderJson("teacher_name", userName);
     }
 
 }
