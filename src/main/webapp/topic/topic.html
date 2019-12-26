@@ -5,7 +5,7 @@
 <table id="topic" lay-filter="topic" ></table>
 
 <!--数据表格开始-->
-
+<div id="view"></div>
 <script type="text/html" id="barTopic">
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="detail">查看</a>
     <a class="layui-btn layui-btn-xs" lay-event="del">删除</a>
@@ -59,6 +59,7 @@
                 edit  : 'text',
                 align : 'center',
                 templet:'<div>{{f1(d.subject_id)}}</div>'
+                // templet: '#titleTpl'
             }, {
                 fixed : 'right',
                 title : '操作',
@@ -138,7 +139,7 @@
 
     function f1(subject_id) {
         var id = subject_id;
-        // console.log("subject_id:"+subject_id);
+        console.log("subject_id:"+subject_id);
         var title = "HEllo";
         var $ = layui.jquery;
         $.ajax({
@@ -146,6 +147,21 @@
             dataType:'json',
             async:false,
             success:function (data) {
+                var jsondata = JSON.stringify(data.data);
+                console.log(jsondata);
+
+                var getTpl = templet.innerHTML
+                    ,view = document.getElementById('view');
+
+                var string = layui.use('laytpl', function(){
+                    var laytpl = layui.laytpl;
+
+                    laytpl(getTpl).render(jsondata, function(html){
+                        view.innerHTML = html;
+                    });
+
+                });
+                console.log(string);
                 // switch (id) {
                 //     case 1: title = "语文";break;
                 //     case 2: title = "数学";break;
@@ -158,12 +174,15 @@
                 //     case 9: title = "政治";break;
                 // }
                 //  console.log(data.data[1].subject_name);
+                // console.log(JSON.stringify(data.data));
+                // console.log(JSON.stringify(data.data[0].subject_name));
                 $.each(data,function (index,obj) {
-                    //console.log(index,obj);
-                    if (obj.data.id === sId){
-                        title = obj.subject_name;
-                        // console.log(obj.id,obj.subject_id);
-                    }
+                    // var subject_id = JSON.stringify(obj.data.subject_id);
+                    // console.log(id)
+                    // if (obj.data.id === sId){
+                    //     title = obj.subject_name;
+                    //     // console.log(obj.id,obj.subject_id);
+                    // }
                 });
             },
             error:function (data) {
@@ -171,8 +190,20 @@
             }
         });
         return title;
-    };
+    }
 
+</script>
+
+<script id="templet" type="text/html">
+    <h3>{{ d.title }}</h3>
+    <ul>
+        {{#  layui.each(d.list, function(index, item){ }}
+        <li>
+            <span>{{ item.subject_id }}</span>
+            <span>{{ item.subject_name }}：</span>
+        </li>
+        }
+    </ul>
 </script>
 
 <script>
