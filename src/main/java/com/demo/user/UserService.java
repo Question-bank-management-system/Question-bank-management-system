@@ -5,6 +5,8 @@ import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 
+import java.util.List;
+
 public class UserService {
     private User dao = new User().dao();
 
@@ -61,5 +63,9 @@ public class UserService {
 
     public int queryByUserlv(int id){
         return Db.queryInt("select userlv from user where id = ? ",id);
+    }
+
+    public List<Record> queryUsername(String username){
+        return Db.find("select * from user where username = ?",username);
     }
 }

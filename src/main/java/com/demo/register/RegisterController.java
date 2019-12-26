@@ -9,6 +9,7 @@ import com.jfinal.aop.Inject;
 import com.jfinal.core.Controller;
 
 import java.util.Date;
+import java.util.List;
 
 @Clear
 public class RegisterController extends Controller {
@@ -21,8 +22,9 @@ public class RegisterController extends Controller {
 
     public void register(){
         User user = getModel(User.class);
-        Object id = userService.queryByPara(user);
-        if(id == null){
+//        Object id = userService.queryByPara(user);
+        int size = userService.queryUsername(user.getUsername()).size();
+        if(size == 0){
             if(!user.getType().equals("admin")){
                 if(user.getType().equals("teacher")){
                     user.setUserlv(2);

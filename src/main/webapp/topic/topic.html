@@ -21,42 +21,6 @@
 
 <script>
 
-    function f1(subject_id) {
-        var id = subject_id;
-        // console.log("subject_id:"+subject_id);
-        var title = "HEllo";
-        var $ = layui.jquery;
-        $.ajax({
-            url:'/subject/list?page=1&limit=10',
-            dataType:'json',
-            async:false,
-            success:function (data) {
-                switch (id) {
-                    case 1: title = "语文";break;
-                    case 2: title = "数学";break;
-                    case 3: title = "英语";break;
-                    case 4: title = "物理";break;
-                    case 5: title = "化学";break;
-                    case 6: title = "生物";break;
-                    case 7: title = "历史";break;
-                    case 8: title = "地理";break;
-                    case 9: title = "政治";break;
-                }
-                //  console.log(data.data[1].subject_name);
-                // $.each(data,function (index,obj) {
-                //     //console.log(index,obj);
-                //     if (obj.data.id === sId){
-                //         title = obj.subject_name;
-                //         // console.log(obj.id,obj.subject_id);
-                //     }
-                // });
-            },
-            error:function (data) {
-                // console.log(data);
-            }
-        });
-        return title;
-    };
     layui.use('table', function() {
         var table = layui.table,
             $ = layui.jquery;
@@ -172,6 +136,42 @@
         });
     });
 
+    function f1(subject_id) {
+        var id = subject_id;
+        // console.log("subject_id:"+subject_id);
+        var title = "HEllo";
+        var $ = layui.jquery;
+        $.ajax({
+            url:'/subject/list?page=1&limit=10',
+            dataType:'json',
+            async:false,
+            success:function (data) {
+                // switch (id) {
+                //     case 1: title = "语文";break;
+                //     case 2: title = "数学";break;
+                //     case 3: title = "英语";break;
+                //     case 4: title = "物理";break;
+                //     case 5: title = "化学";break;
+                //     case 6: title = "生物";break;
+                //     case 7: title = "历史";break;
+                //     case 8: title = "地理";break;
+                //     case 9: title = "政治";break;
+                // }
+                //  console.log(data.data[1].subject_name);
+                $.each(data,function (index,obj) {
+                    //console.log(index,obj);
+                    if (obj.data.id === sId){
+                        title = obj.subject_name;
+                        // console.log(obj.id,obj.subject_id);
+                    }
+                });
+            },
+            error:function (data) {
+                // console.log(data);
+            }
+        });
+        return title;
+    };
 
 </script>
 
