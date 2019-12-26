@@ -68,4 +68,8 @@ public class UserService {
     public List<Record> queryUsername(String username){
         return Db.find("select * from user where username = ?",username);
     }
+
+    public List<Record> queryType(String type){
+        return Db.find("select * from user where type = ?",type);
+    }
 }

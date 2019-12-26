@@ -2,6 +2,32 @@
 
 #define main()
 
+<!--搜索开始-->
+
+<form class="layui-form" action="" lay-filter="searchFrm" id="searchFrm">
+    <div class="layui-form-item" style="text-align:center;">
+        <div class="layui-inline">
+            <div class="layui-input-inline">
+                <input type="text" autocomplete="off" class="layui-input" placeholder="请输入用户名"  name="username" id="username" value="">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <div class="layui-input-inline">
+                <input type="text" autocomplete="off" class="layui-input" placeholder="请输入用户类型"  name="type" id="type" value="">
+            </div>
+        </div>
+        <div class="layui-inline" style="text-align:left;">
+            <div class="layui-input-inline">
+                <button type="button" class="layui-btn layui-btn-normal layui-btn-sm layui-icon layui-icon-search" data-type="reload" id="search">查询</button>
+                <button type="reset" class="layui-btn layui-btn-warm layui-btn-sm layui-icon layui-icon-refresh">重置</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<!--搜索结束-->
+
+
 <table id="user" lay-filter="user" ></table>
 
 <!--数据表格开始-->
@@ -118,6 +144,40 @@
         table.on('checkbox(user)', function(obj){
             console.log(obj)
         });
+
+        ////监听搜索
+        $('#search').on('click', function () {
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+
+        // 点击获取数据
+        var  active = {
+            reload: function () {
+                var username=$('#username').val();
+                var type=$('#type').val();
+                if (username != null||type != null) {
+                    var index = layer.msg('查询中，请稍候...');
+                    table.reload('userReload', { //表格的id
+                        url:'/user/findUser?username='+ data.username +'&type = '+ data.type,
+                        page:{
+                            curr:1
+                        },
+                        where: {
+                            username:username,
+                            type:type,
+                        }
+                    });
+                    layer.close(index);
+                } else {
+                    layer.msg("请输入用户名或用户类型！！！");
+                }
+            },
+        };
+
+
+
+
         //监听行工具事件
         table.on('tool(user)', function(obj) {
             var data = obj.data;
@@ -208,29 +268,19 @@
         });
 
 
-         // //监听提交
-          form.on('submit(*)', function(data){
-              console.log(data.elem) //被执行事件的元素DOM对象，一般为button对象
-              console.log(data.form) //被执行提交的form对象，一般在存在form标签时才会返回
-              console.log(data.field) //当前容器的全部表单字段，名值对形式：{name: value}
-              var $ = layui.$;
-              $.ajax({
-                  type: 'post',
-                  url: "/user/add", // ajax请求路径
-                  data: JSON.stringify(data.field),
-                  datatype: "json",
-                  contentType: "application/json;charset=utf-8",
-                  success: function (data) {
-                      layer.msg('添加成功');
-                      layer.close(index);
-                      location.reload();
-                  },
-                  'error':function () {
-                      layer.msg("添加失败")
-                  }
-              });
-              return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
-          });
+        form.on('submit(demo1)', function(data){
+            $.post('/user/add',data.field,function(result){
+                if(result==0){
+                    layer.msg('提交成功！',
+                        function(){
+                            window.parent.location.reload();
+                        });
+                }else{
+                    layer.msg('提交失败！');
+                }
+            });
+            return false;
+        });
 
          form.on('select(type)',function (data) {
              type = data.value;

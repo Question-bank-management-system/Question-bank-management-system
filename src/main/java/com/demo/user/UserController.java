@@ -76,4 +76,12 @@ public class UserController extends Controller{
         redirect("/user");
     }
 
+
+    public void findUser(){
+        String username = getPara("username");
+        String type = getPara("type");
+        System.out.println(username);
+        System.out.println(type);
+    }
+
 }
