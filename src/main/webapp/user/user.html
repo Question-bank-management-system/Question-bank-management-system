@@ -206,11 +206,12 @@
             layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
         });
 
-        //监听提交
+        // //监听提交
         form.on('submit(demo1)', function(data){
-            layer.alert(JSON.stringify(data.field), {
-                title: '最终的提交信息'
-            })
+            layer.alert("提交成功")
+            // layer.alert(JSON.stringify(data.field), {
+            //     title: '最终的提交信息'
+            // })
             return false;
         });
 
@@ -322,11 +323,9 @@
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">性别</label>
-            <div class="layui-input-inline">
-                <select name="user.sex" lay-filter="sex">
-                    <option value="男"selected>男</option>
-                    <option value="女">女</option>
-                </select>
+            <div class="layui-input-block">
+                <input type="radio" name="user.sex" value="男" title="男">
+                <input type="radio" name="user.sex" value="女" title="女" checked>
             </div>
         </div>
         <div class="layui-form-item">
