@@ -21,6 +21,42 @@
 
 <script>
 
+    function f1(subject_id) {
+        var sId = subject_id;
+        // console.log("subject_id:"+subject_id);
+        var title = "HEllo";
+        var $ = layui.jquery;
+        $.ajax({
+            url:'/subject/list?page=1&limit=10',
+            dataType:'json',
+            async:true,
+            success:function (data) {
+                switch (sId) {
+                    case 1: title = "语文";break;
+                    case 2: title = "数学";break;
+                    case 3: title = "英语";break;
+                    case 4: title = "物理";break;
+                    case 5: title = "化学";break;
+                    case 6: title = "生物";break;
+                    case 7: title = "历史";break;
+                    case 8: title = "地理";break;
+                    case 9: title = "政治";break;
+                }
+                //  console.log(data.data[1].subject_name);
+                // $.each(data,function (index,obj) {
+                //     //console.log(index,obj);
+                //     if (obj.data.id === sId){
+                //         title = obj.subject_name;
+                //         // console.log(obj.id,obj.subject_id);
+                //     }
+                // });
+            },
+            error:function (data) {
+                // console.log(data);
+            }
+        });
+        return title;
+    };
     layui.use('table', function() {
         var table = layui.table,
             $ = layui.jquery;
@@ -57,7 +93,8 @@
                 field : 'subject_id',
                 title : '科目ID',
                 edit  : 'text',
-                align : 'center'
+                align : 'center',
+                templet:'<div>{{f1(d.subject_id)}}</div>'
             }, {
                 fixed : 'right',
                 title : '操作',
@@ -68,6 +105,7 @@
             page : true,
             id:'topicReload'
         });
+
 
         table.on('toolbar(topic)', function(obj) {
             var data = obj.data;
@@ -133,6 +171,8 @@
             layer.msg('[ID: '+ data.id +'] ' + field + ' 字段更改为：'+ value);
         });
     });
+
+
 </script>
 
 <script>
@@ -140,7 +180,8 @@
         var form = layui.form
             ,layer = layui.layer
             ,layedit = layui.layedit
-            ,laydate = layui.laydate;
+            ,laydate = layui.laydate
+            ,$ = layui.$;
 
         //日期
         laydate.render({
@@ -215,6 +256,7 @@
             alert(JSON.stringify(data));
         });
     });
+
 </script>
 #end
 <!--添加的弹出层开始-->
@@ -245,11 +287,19 @@
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">科目ID</label>
+            <label class="layui-form-label">科目名称</label>
             <div class="layui-input-inline">
-                <label>
-                    <input type="text" name="topic.subject_id" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
-                </label>
+                <select name="topic.subject_id" lay-filter="type">
+                    <option value="1"selected>语文</option>
+                    <option value="2">数学</option>
+                    <option value="3" >英语</option>
+                    <option value="4" >物理</option>
+                    <option value="5" >化学</option>
+                    <option value="6" >生物</option>
+                    <option value="7" >历史</option>
+                    <option value="8" >地理</option>
+                    <option value="9" >政治</option>
+                </select>
             </div>
         </div>
         <div class="layui-form-item">
