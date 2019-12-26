@@ -137,73 +137,27 @@
         });
     });
 
-    function f1(subject_id) {
-        var id = subject_id;
+    function f1(id) {
+        var subject_id = id;
         console.log("subject_id:"+subject_id);
         var title = "HEllo";
         var $ = layui.jquery;
         $.ajax({
-            url:'/subject/list?page=1&limit=10',
+            url:'/subject/querySubjectname?page=1&limit=10&subjectid='+id,
             dataType:'json',
             async:false,
             success:function (data) {
-                var jsondata = JSON.stringify(data.data);
-                console.log(jsondata);
-
-                var getTpl = templet.innerHTML
-                    ,view = document.getElementById('view');
-
-                var string = layui.use('laytpl', function(){
-                    var laytpl = layui.laytpl;
-
-                    laytpl(getTpl).render(jsondata, function(html){
-                        view.innerHTML = html;
-                    });
-
-                });
-                console.log(string);
-                // switch (id) {
-                //     case 1: title = "语文";break;
-                //     case 2: title = "数学";break;
-                //     case 3: title = "英语";break;
-                //     case 4: title = "物理";break;
-                //     case 5: title = "化学";break;
-                //     case 6: title = "生物";break;
-                //     case 7: title = "历史";break;
-                //     case 8: title = "地理";break;
-                //     case 9: title = "政治";break;
-                // }
-                //  console.log(data.data[1].subject_name);
-                // console.log(JSON.stringify(data.data));
-                // console.log(JSON.stringify(data.data[0].subject_name));
+                var jsondata = data;
                 $.each(data,function (index,obj) {
-                    // var subject_id = JSON.stringify(obj.data.subject_id);
-                    // console.log(id)
-                    // if (obj.data.id === sId){
-                    //     title = obj.subject_name;
-                    //     // console.log(obj.id,obj.subject_id);
-                    // }
+                    title = data.subject_name;
                 });
             },
             error:function (data) {
-                // console.log(data);
             }
         });
         return title;
     }
 
-</script>
-
-<script id="templet" type="text/html">
-    <h3>{{ d.title }}</h3>
-    <ul>
-        {{#  layui.each(d.list, function(index, item){ }}
-        <li>
-            <span>{{ item.subject_id }}</span>
-            <span>{{ item.subject_name }}：</span>
-        </li>
-        }
-    </ul>
 </script>
 
 <script>

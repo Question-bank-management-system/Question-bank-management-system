@@ -5,6 +5,8 @@ import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 
+import java.util.List;
+
 
 public class SubjectService {
     private Subject dao = new Subject().dao();
@@ -30,5 +32,9 @@ public class SubjectService {
     public void add(Subject  subject1){
         Record subject = new Record().set("subject_name",subject1.getSubjectName());
         Db.save("subject",subject);
+    }
+
+    public String queryName(int id){
+        return Db.queryStr("select subject_name from subject where id = ?", id);
     }
 }

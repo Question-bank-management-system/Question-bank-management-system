@@ -51,4 +51,10 @@ public class SubjectController extends Controller {
         subjectService.add(subject);
         redirect("/subject");
     }
+
+    public void querySubjectname(){
+        int subject_id = getParaToInt("subjectid");
+        String name = subjectService.queryName(subject_id);
+        renderJson("subject_name", name);
+    }
 }
