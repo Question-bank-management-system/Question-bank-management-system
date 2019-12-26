@@ -13,9 +13,18 @@ public class StudentService {
         return dao.paginate(pageNumber,pageSize,"select *","from student order by id asc");
     }
 
+    Page<Student> paginateStu(int pageNumber, int pageSize, int id){
+        return dao.paginate(pageNumber,pageSize,"select *","from student where user_id = ?",id);
+    }
+
     int allRecordCount(){
         return Db.queryInt("select count(*) from student");
     }
+
+    int allRecordCountStu(int id){
+        return Db.queryInt("select count(*) from student where user_id = ?",id);
+    }
+
 
     void delete(int id){
         dao.deleteById(id);

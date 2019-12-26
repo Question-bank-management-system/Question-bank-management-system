@@ -10,15 +10,14 @@
 <!--数据表格开始-->
 
 <script type="text/html" id="barClass">
-    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="detail">查看</a>
-    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="add">加入班级</a>
-    <a class="layui-btn layui-btn-xs" lay-event="del">删除</a>
+    <a class="layui-btn layui-btn-xs" lay-event="detail">查看</a>
+<!--    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="add">退出班级</a>-->
 </script>
 
 <script type="text/html" id="toolbarClass">
     <div class="layui-btn-container">
         <button class="layui-btn layui-btn-sm dw-refresh" lay-event="refresh">刷新</button>
-        <button class="layui-btn layui-btn-sm dw-refresh" onclick="window.location.href='/student/list_myclass'">我的班级</button>
+        <button class="layui-btn layui-btn-sm dw-refresh" onclick="window.location.href='/student/class_index'">班级列表</button>
     </div>
 </script>
 <!--数据表格结束-->
@@ -32,7 +31,7 @@
             elem    : '#class',
             toolbar : '#toolbarClass',
             cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
-            url  : '/classs/list',
+            url  : '/student/myclass',
             cols : [ [ {
                 type  : 'checkbox',
                 fixed : 'left'
@@ -42,9 +41,20 @@
                 align : 'center',
                 sort  : true
             }, {
-                field : 'teacher_id',
-                title : '教师ID',
-                edit  : 'text',
+                field : 'user_id',
+                title : '用户ID',
+                align : 'center'
+            }, {
+                field : 'classid',
+                title : '班级ID',
+                align : 'center'
+            }, {
+                field : 'test_paperid',
+                title : '试卷ID',
+                align : 'center'
+            }, {
+                field : 'score',
+                title : '我的分数',
                 align : 'center'
             }, {
                 fixed : 'right',

@@ -6,6 +6,8 @@ import com.demo.user.UserService;
 import com.jfinal.aop.Inject;
 import com.jfinal.core.Controller;
 import com.jfinal.json.Json;
+import com.jfinal.plugin.activerecord.Db;
+import com.jfinal.plugin.activerecord.Record;
 
 import java.util.List;
 
@@ -44,13 +46,34 @@ public class StudentController extends Controller {
         int classid = Integer.parseInt(getPara("classid"));
         Student student = new Student();
         User user = getSessionAttr("user");
-        student.setUserId(user.getId());
-        student.setClassid(classid);
+
+        // 在student表中查询该生是否加入该班级
+        List<Record> students = Db.find("select * from student where classid = ? and user_id = ?",classid, user.getId());
+        if(students.size() == 0){
+            student.setUserId(user.getId());
+            student.setClassid(classid);
+            student.save();
+        }
         redirect("/student/class_index");
     }
 
     public void list_myclass(){
-        render("/student/mycalss.html");
+        render("personalfile/mycalss.html");
+    }
+
+    public void myclass(){
+        int page = getParaToInt("page");
+        int limit = getParaToInt("limit");
+
+        User user = getSessionAttr("user");
+        List<Student> lists = studentService.paginateStu(page,limit,user.getId()).getList();
+        String jsonList = Json.getJson().toJson(lists);
+
+        int recordCount = studentService.allRecordCountStu(user.getId());
+
+        String jsons = "{\"code\":\"0\",\"msg\":\"\",\"count\":\""+
+                recordCount+"\",\"data\":"+jsonList+"}";
+        renderJson(jsons);
     }
 
     //试卷考试

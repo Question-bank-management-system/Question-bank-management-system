@@ -10,9 +10,8 @@
 <!--数据表格开始-->
 
 <script type="text/html" id="barClass">
-    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="detail">查看</a>
+    <a class="layui-btn layui-btn-xs" lay-event="detail">查看</a>
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="add">加入班级</a>
-    <a class="layui-btn layui-btn-xs" lay-event="del">删除</a>
 </script>
 
 <script type="text/html" id="toolbarClass">
@@ -44,7 +43,6 @@
             }, {
                 field : 'teacher_id',
                 title : '教师ID',
-                edit  : 'text',
                 align : 'center'
             }, {
                 fixed : 'right',
@@ -74,24 +72,7 @@
             if (obj.event === 'detail') {
                 // window.alert("Hello");
                 layer.msg('ID：' + data.id + ' 的查看操作');
-            } else if (obj.event === 'del') {
-                layer.confirm('真的删除ID为'+data.id+'的记录么？', function (index) {
-                    var $ = layui.$;
-                    $.ajax({
-                        type: 'get',
-                        url: "/classs/delete?id=" + data.id, // ajax请求路径
-                        data: JSON.stringify(data),
-                        datatype: "json",
-                        contentType: "application/json;charset=utf-8",
-                        success: function (data) {
-                            layer.msg('删除成功');
-                        }
-                    });
-                    obj.del();
-                    layer.close(index);
-
-                });
-            }else if(obj.event === 'add'){
+            } else if(obj.event === 'add'){
                 var $ = layui.$;
                 $.ajax({
                     type: 'get',
