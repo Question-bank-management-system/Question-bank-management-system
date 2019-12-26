@@ -13,7 +13,7 @@
         <!-- 公司logo -->
         <div class="nav-logo" style="margin-left: -20px">
             <a href="index.html">
-                <img src="../assets/res/image/logo.png" alt="题趣多题库系统">
+                <img src="../assets/res/image/logo.png" alt="题趣多题库系统" style="width: 200px;height: 70px;margin-left: 50px">
             </a>
         </div>
         <div class="nav-list">
@@ -24,8 +24,16 @@
                 <li class="layui-nav-item"><a href="/student/testPaper">试卷考试</a></li>
                 <li class="layui-nav-item"><a href="/student/practiceExam">练习考试</a></li>
                 <li class="layui-nav-item"><a href="/student/redo">错题重做</a></li>
-                <li class="layui-nav-item"><a href="/student/viewResults">查看考试成绩</a></li>
+                <li class="layui-nav-item"><a href="/student/viewResults">查看成绩</a></li>
                 <li class="layui-nav-item"><a href="/student/personal_center">个人中心</a></li>
+                <li class="layui-nav-item"><a href="/login/login">退出</a></li>
+<!--                <li class="layui-nav-item" lay-unselect="">-->
+<!--                        <a href="javascript:;"><img src="//t.cn/RCzsdCq" class="layui-nav-img" >个人中心</a>-->
+<!--                        <dl class="layui-nav-child">-->
+<!--                            <dd><a href="javascript:;">信息设置</a></dd>-->
+<!--                            <dd><a href="javascript:;">退出登录</a></dd>-->
+<!--                        </dl>-->
+<!--                </li>-->
             </ul>
         </div>
     </div>
@@ -67,6 +75,19 @@
         base: '../assets/res/static/js/'
     }).use('firm');
 </script>
+
+<script>
+    layui.use('element', function(){
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+
+        //监听导航点击
+        element.on('nav(demo)', function(elem){
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+
 </body>
 </html>
 #end

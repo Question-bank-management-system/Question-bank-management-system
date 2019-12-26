@@ -187,7 +187,7 @@ body{background: #fff;}
   .nav.index{background: rgba(255, 255, 255 ,0.3);}
   .nav .nav-list button{display: none;}
   .nav .layui-nav{width: auto; position: absolute; top: 0; padding: 0 5px; border-radius: 0; margin: 0;}
-  .nav .layui-nav .layui-nav-item{display: inline-block; margin:0 53px; line-height: 80px;}
+  .nav .layui-nav .layui-nav-item{display: inline-block; margin:0 39px; line-height: 80px;}
   .main-product p.title
   ,.main-service p.title{font-size: 36px; line-height: 216px;}
   .main.product .content .content-img{text-align: left;}

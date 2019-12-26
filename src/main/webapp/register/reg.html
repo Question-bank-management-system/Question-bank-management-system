@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>题趣多题库系统-注册</title>
+
+    <link rel="stylesheet" type="text/css" href="../assets/res/css/login.css"/>
+</head>
+
+<body style="background-image: url(../assets/res/image/login.png); background-size: 100%">
+<div id="login_frame">
+
+    <p id="image_logo"><img src="../assets/res/image/logo.png"></p>
+
+    <form method="post" action="/register/register">
+        <p><label class="label_input">用户名</label><input type="text" name="user.username" class="text_field"/></p>
+        <p><label class="label_input">密  码</label><input type="password" name="user.password" class="text_field"/></p>
+        <div class="layui-form-item">
+            <label class="layui-form-label">类型</label>
+            <div class="layui-input-inline">
+                <select name="user.type" lay-filter="type">
+                    <option value="admin">admin</option>
+                    <option value="teacher">teacher</option>
+                    <option value="student" selected>student</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="layui-btn" lay-submit="" lay-filter="btn_submit">注册</button>
+        <button type="button" class="layui-btn" lay-submit="" onclick="window.location.href='/login/'">登录</button>
+        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+
+        <!--        <div id="login_control">-->
+        <!--            <input type="button" id="btn_login" value="登  录" οnclick="login();"/>-->
+        <!--            <script type="text/javascript" src="../assets/res/js/login.js"></script>-->
+        <!--            <a id="forget_pwd" href="forget_pwd.html">忘记密码？</a>-->
+        <!--        </div>-->
+    </form>
+</div>
+<script src="../assets/res/layui/layui.js"></script>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate;
+
+        //自定义验证规则
+        form.verify({
+            title: function(value){
+                if(value.length < 5){
+                    return '标题至少得5个字符啊';
+                }
+            }
+            ,pass: [
+                /^[\S]{6,12}$/
+                ,'密码必须6到12位，且不能出现空格'
+            ]
+            ,content: function(value){
+                layedit.sync(editIndex);
+            }
+        });
+
+        form.on('select(type)',function (data) {
+            type = data.value;
+            // text = data.elapsedTime[data.elem.selectedIndex].text;
+            console.log("type:"+type);
+            // console.log("text:"+text);
+
+        });
+
+    });
+</script>
+</body>
+</html>

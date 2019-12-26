@@ -22,13 +22,49 @@
 
 <!-- main部分 -->
 #define main()
-    <div class="demoTable" style="margin-top: 50px;text-align: center;margin-bottom: 30px">
-        搜索试卷编号：
-        <div class="layui-inline">
-            <input class="layui-input" name="id" id="demoReload" autocomplete="off">
-        </div>
-        <button class="layui-btn" data-type="reload">搜索</button>
-    </div>
+<!--    <div class="demoTable" style="margin-top: 50px;text-align: center;margin-bottom: 30px">-->
+<!--        搜索试卷编号：-->
+<!--        <div class="layui-inline">-->
+<!--            <input class="layui-input" name="id" id="demoReload" autocomplete="off">-->
+<!--        </div>-->
+<!--        <button class="layui-btn" data-type="reload">搜索</button>-->
+<!--    </div>-->
+
+    <table class="layui-table" lay-data="{url:'/demo/table/user/', page:true, id:'idTest'}" lay-filter="demo">
+        <thead>
+        <tr>
+            <th lay-data="{field:'id', width:80, fixed: true}">试卷编号</th>
+            <th lay-data="{field:'subject', width:80}">科目</th>
+            <th lay-data="{field:'time', width:80, sort: true}">时间</th>
+            <th lay-data="{field:'score', width:80, sort: true}">成绩</th>
+            <th lay-data="{field:'score-sort', width:80, sort: true}">排名</th>
+            <th lay-data="{fixed: 'right', width:80, align:'center', toolbar: '#barDemo'}"></th>
+        </tr>
+        </thead>
+    </table>
+
+    <script type="text/html" id="barDemo">
+        <a href="/student/examChinese" class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+    </script>
 
 
+    <script src="../assets/res/layui/layui.js" charset="utf-8"></script>
+    <script>
+        layui.use('table', function(){
+            var table = layui.table;
+
+            //监听工具条
+            table.on('tool(demo)', function(obj){
+                var data = obj.data;
+                if(obj.event === 'detail'){
+                    layer.msg('ID：'+ data.id + ' 的查看操作');
+                }
+            });
+
+            $('.demoTable .layui-btn').on('click', function(){
+                var type = $(this).data('type');
+                active[type] ? active[type].call(this) : '';
+            });
+        });
+    </script>
 #end
