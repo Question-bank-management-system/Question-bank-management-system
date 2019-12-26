@@ -104,7 +104,7 @@
                     type: 1,
                     skin: 'layui-layer-rim', //加上边框
                     area: ['420px', '550px'], //宽高
-                    content: $('#form_add')
+                    content: $('#form_add'),
                     // layer.alert('编辑行：<br>'+ JSON.stringify(data))
                 });
                 // window.location="/user/add";
@@ -206,47 +206,38 @@
             layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
         });
 
-        // //监听提交
-        form.on('submit(demo1)', function(data){
-            layer.alert("提交成功")
-            // layer.alert(JSON.stringify(data.field), {
-            //     title: '最终的提交信息'
-            // })
-            return false;
-        });
 
+         // //监听提交
+          form.on('submit(*)', function(data){
+              console.log(data.elem) //被执行事件的元素DOM对象，一般为button对象
+              console.log(data.form) //被执行提交的form对象，一般在存在form标签时才会返回
+              console.log(data.field) //当前容器的全部表单字段，名值对形式：{name: value}
+              var $ = layui.$;
+              $.ajax({
+                  type: 'post',
+                  url: "/user/add", // ajax请求路径
+                  data: JSON.stringify(data.field),
+                  datatype: "json",
+                  contentType: "application/json;charset=utf-8",
+                  success: function (data) {
+                      layer.msg('添加成功');
+                      layer.close(index);
+                      location.reload();
+                  },
+                  'error':function () {
+                      layer.msg("添加失败")
+                  }
+              });
+              return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+          });
 
-        // //监听提交
-        // form.on('submit(*)', function(data){
-        //     console.log(data.elem) //被执行事件的元素DOM对象，一般为button对象
-        //     console.log(data.form) //被执行提交的form对象，一般在存在form标签时才会返回
-        //     console.log(data.field) //当前容器的全部表单字段，名值对形式：{name: value}
-        //     var $ = layui.$;
-        //     $.ajax({
-        //         type: 'post',
-        //         url: "/user/add", // ajax请求路径
-        //         data: JSON.stringify(data.field),
-        //         datatype: "json",
-        //         contentType: "application/json;charset=utf-8",
-        //         success: function (data) {
-        //             layer.msg('添加成功');
-        //             layer.close(index);
-        //             location.reload();
-        //         },
-        //         'error':function () {
-        //             layer.msg("添加失败")
-        //         }
-        //     });
-        //     return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
-        // });
+         form.on('select(type)',function (data) {
+             type = data.value;
+             // text = data.elapsedTime[data.elem.selectedIndex].text;
+             console.log("type:"+type);
+             // console.log("text:"+text);
 
-        form.on('select(type)',function (data) {
-            type = data.value;
-            // text = data.elapsedTime[data.elem.selectedIndex].text;
-            console.log("type:"+type);
-            // console.log("text:"+text);
-
-        });
+         });
 
         form.on('select(sex)',function (data) {
             sex = data.value;
@@ -266,7 +257,7 @@
 #end
 <!--添加的弹出层开始-->
 <div id= 'form_add' style="margin: 0 auto;width: 370px;display: none;margin-top: 10px">
-    <form class="layui-form layui-form-pane" action="/user/add" method="post"  style="">
+    <form class="layui-form layui-form-pane" action="/user/add" method="post" >
         <div class="layui-form-item">
             <label class="layui-form-label">用户名</label>
             <div class="layui-input-inline">

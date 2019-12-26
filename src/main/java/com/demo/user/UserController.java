@@ -50,29 +50,29 @@ public class UserController extends Controller{
 
     public void add(){
         User user = getModel(User.class);
-        //System.out.println(user.getUsername());
-        userService.add(user);
-        int userid = (int)userService.queryByPara(user);
-        int userlv = userService.queryByUserlv((int)userid);
 
-        if(userlv == 1){
-            AdminUser adminUser = new AdminUser();
-            adminUser.setUserId(userid);
-            adminUser.save();
-        }
-        else if(userlv == 2){
-            Teacher teacher = new Teacher();
-            teacher.setUserId(userid);
-            teacher.save();
-        }
-        else{
-            Student student = new Student();
-            student.setUserId(userid);
-            student.save();
-        }
+        int size = userService.queryUsername(user.getUsername()).size();
+        if(size == 0){
+            userService.add(user);
+            int userid = (int)userService.queryByPara(user);
+            int userlv = userService.queryByUserlv((int)userid);
+            if(userlv == 1){
+                AdminUser adminUser = new AdminUser();
+                adminUser.setUserId(userid);
+                adminUser.save();
+            }
+            else if(userlv == 2){
+                Teacher teacher = new Teacher();
+                teacher.setUserId(userid);
+                teacher.save();
+            }
+            else{
+                Student student = new Student();
+                student.setUserId(userid);
+                student.save();
+            }
 
-
-        //int userId = (int)userService.queryByPara(user);
+        }
         redirect("/user");
     }
 
