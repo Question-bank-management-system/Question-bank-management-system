@@ -25,10 +25,11 @@ public class LoginController extends Controller {
         else {
             user.setId((int) userid);
             user.setUserlv(userService.queryByUserlv((int) userid));
-            setSessionAttr("user", user);
-            if(user.getUserlv() == 1){
+            User user1 = user.dao().findById((int)userid);
+            setSessionAttr("user", user1);
+            if(user1.getUserlv() == 1){
                 redirect("/user");
-            }else if(user.getUserlv() == 2){
+            }else if(user1.getUserlv() == 2){
                 redirect("/teacher");
             }
             else {
