@@ -13,8 +13,83 @@
 #define main()
 <div class="main-product">
     <div class="layui-container">
-        班级管理（增删查改）
-        查看班级成绩
+        <div style="margin-bottom: 5px;">
+            <ins class="adsbygoogle" style="display:inline-block;width:970px;height:50px" data-ad-client="ca-pub-6111334333458862" data-ad-slot="3820120620"></ins>
+        </div>
+
+        <div style="text-align: center">
+            搜索ID：
+            <div class="layui-inline">
+                <input class="layui-input" name="id" id="demoReload" autocomplete="off">
+            </div>
+            <button class="layui-btn" data-type="reload">搜索</button>
+        </div>
+
+
+        <div  style="margin: 20px 200px 20px 180px !important;">
+            <table class="layui-table" lay-data="{width: 892, height:330, url:'/demo/table/user/', page:true, id:'idTest'}" lay-filter="demo">
+                <thead>
+                <tr>
+                    <th lay-data="{field:'id', width:80, sort: true, fixed: true}">ID</th>
+                    <th lay-data="{field:'teacher_id, width:80}">教师ID</th>
+                    <th lay-data="{fixed: 'right', width:178, align:'center', toolbar: '#barDemo'}">操作</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <script type="text/html" id="barDemo">
+            <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看成绩</a>
+            <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+        </script>
+
+
+        <script src="../assets/res/layui/layui.js" charset="utf-8"></script>
+        <script>
+            layui.use('table', function(){
+                var table = layui.table;
+                //监听表格复选框选择
+                table.on('checkbox(demo)', function(obj){
+                    console.log(obj)
+                });
+                //监听工具条
+                table.on('tool(demo)', function(obj){
+                    var data = obj.data;
+                    if(obj.event === 'detail'){
+                        layer.msg('ID：'+ data.id + ' 的查看成绩操作');
+                    } else if(obj.event === 'del'){
+                        layer.confirm('确认删除吗', function(index){
+                            obj.del();
+                            layer.close(index);
+                        });
+                    } else if(obj.event === 'edit'){
+                        layer.alert('编辑行：<br>'+ JSON.stringify(data))
+                    }
+                });
+
+                var $ = layui.$, active = {
+                    getCheckData: function(){ //获取选中数据
+                        var checkStatus = table.checkStatus('idTest')
+                            ,data = checkStatus.data;
+                        layer.alert(JSON.stringify(data));
+                    }
+                    ,getCheckLength: function(){ //获取选中数目
+                        var checkStatus = table.checkStatus('idTest')
+                            ,data = checkStatus.data;
+                        layer.msg('选中了：'+ data.length + ' 个');
+                    }
+                    ,isAll: function(){ //验证是否全选
+                        var checkStatus = table.checkStatus('idTest');
+                        layer.msg(checkStatus.isAll ? '全选': '未全选')
+                    }
+                };
+
+                $('.demoTable .layui-btn').on('click', function(){
+                    var type = $(this).data('type');
+                    active[type] ? active[type].call(this) : '';
+                });
+            });
+        </script>
     </div>
 </div>
 #end
