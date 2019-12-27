@@ -16,7 +16,7 @@
 <div id="login_frame">
 
     <form action="/register/register" class="layui-form">
-        <div class="layui-form-item" style="margin-left: 10px; float: left;margin-top: 30px">
+        <div class="layui-form-item" style="margin-left: 40px; float: left;margin-top: 30px">
             <label class="layui-form-label">用户身份</label>
             <div class="layui-input-inline">
                 <select name="user.type" lay-verify="required" lay-search="">
@@ -26,22 +26,22 @@
             </div>
         </div>
 
-        <div class="layui-form-item" style="float: left">
-            <label class="layui-form-label">用户名</label>
+        <div class="layui-form-item" style="float: left;margin-left: 30px">
+            <label class="layui-form-label" style="margin-left: 10px">用&nbsp;&nbsp;户&nbsp;&nbsp;名</label>
             <div class="layui-input-block" style="width: 190px">
                 <input type="text" style="margin-left: -10px;float: left" name="user.username" lay-verify="username" autocomplete="off" placeholder="请输入昵称" class="layui-input">
             </div>
         </div>
 
-        <div class="layui-form-item">
-            <label class="layui-form-label">密 码</label>
+        <div class="layui-form-item" style="margin-left: 30px">
+            <label class="layui-form-label"style="margin-left: 10px">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 码</label>
             <div class="layui-input-inline">
-                <input type="password" style="margin-left: 10px;float: left" name="user.password" lay-verify="pass" placeholder="请输入密码" autocomplete="off" class="layui-input" required="required">
+                <input type="password" style="margin-left: 1px;float: left" name="user.password" lay-verify="pass" placeholder="请输入密码" autocomplete="off" class="layui-input" required="required">
             </div>
         </div>
 
         <div class="layui-form-item" style="margin-top: 30px">
-            <div class="layui-input-block" style="margin-left: -80px; float: left">
+            <div class="layui-input-block" style="margin-left: -40px; float: left">
                 <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1" style="background-color: #2ab5a3;margin-left: 200px">提交注册</button>
             </div>
         </div>
