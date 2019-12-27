@@ -15,13 +15,12 @@
 <body style="background-image: url(../assets/res/image/login.png); background-size: 100%">
 <div id="login_frame">
 
-    <form action="" class="layui-form">
+    <form action="/register/register" class="layui-form">
         <div class="layui-form-item" style="margin-left: 10px; float: left;margin-top: 30px">
             <label class="layui-form-label">用户身份</label>
             <div class="layui-input-inline">
-                <select name="modules" lay-verify="required" lay-search="">
-                    <option value="student" checked="">admin</option>
-                    <option value="student" checked="">teacher</option>
+                <select name="user.type" lay-verify="required" lay-search="">
+                    <option value="teacher" checked="">teacher</option>
                     <option value="student" checked="">student</option>
                 </select>
             </div>
@@ -66,8 +65,8 @@
         //自定义验证规则
         form.verify({
             username: function(value){
-                if(value.length < 2){
-                    return '昵称至少得2个字符';
+                if(value.length < 3){
+                    return '昵称至少得3个字符';
                 }
             }
             ,pass: [
