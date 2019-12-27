@@ -38,6 +38,10 @@ public class StudentController extends Controller {
         render("personalfile/personal_center.html");
     }
 
+    public void personal_update(){
+        render("personalfile/personal_update.html");
+    }
+
     public void class_index(){
         render("personalfile/addclass.html");
     }
