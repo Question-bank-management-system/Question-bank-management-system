@@ -34,7 +34,12 @@ public class LoginController extends Controller {
             else {
                 redirect("/");
             }
-
         }
+    }
+
+    public void logout(){
+        User user  = new User();
+        setSessionAttr("user",user);
+        redirect("/login");
     }
 }

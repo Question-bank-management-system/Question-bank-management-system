@@ -75,6 +75,10 @@ public class StudentController extends Controller {
         render("personalfile/mycalss.html");
     }
 
+    public void list_myexam(){
+            render("personalfile/myexam.html");
+    }
+
     public void myclass(){
         int page = getParaToInt("page");
         int limit = getParaToInt("limit");
