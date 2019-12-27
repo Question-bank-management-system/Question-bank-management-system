@@ -55,7 +55,8 @@
             }, {
                 field : 'testpaper_id',
                 title : '试卷号',
-                align : 'center'
+                align : 'center',
+                templet:'<div>{{f1(d.classid,d.user_id,d.id)}}</div>'
             }, {
                 field : 'score',
                 title : '分数',
@@ -142,6 +143,25 @@
             layer.msg('[ID: '+ data.id +'] ' + field + ' 字段更改为：'+ value);
         });
     });
+
+    function f1(user_id,class_id,student_id) {
+        var testpaper_id = "1";
+        var $ = layui.jquery;
+        $.ajax({
+            url:'/exam/queryPaperId?student_id='+student_id+'&class_id='+class_id,
+            dataType:'json',
+            async:false,
+            success:function (data) {
+                var jsondata = data;
+                $.each(data,function (index,obj) {
+                    title = data.subject_name;
+                });
+            },
+            error:function (data) {
+            }
+        });
+        return testpaper_id;
+    }
 </script>
 
 <script>

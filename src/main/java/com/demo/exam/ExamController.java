@@ -1,5 +1,6 @@
 package com.demo.exam;
 
+import com.demo.common.model.TestPaper;
 import com.demo.common.model.User;
 import com.demo.exam.ExamService;
 import com.demo.common.model.Exam;
@@ -12,6 +13,9 @@ import java.util.List;
 public class ExamController extends Controller {
     @Inject
     ExamService examService;
+
+    @Inject
+    TestPaper testPaper;
 
     public void index(){
         User user = getSessionAttr("user");
@@ -53,5 +57,11 @@ public class ExamController extends Controller {
         //System.out.println(student.get)
         examService.add(exam);
         redirect("/exam");
+    }
+
+    public void queryPaperId(){
+        int student_id = getParaToInt("student_id");
+        int class_id = getParaToInt("class_id");
+
     }
 }
