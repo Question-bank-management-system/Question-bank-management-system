@@ -11,7 +11,7 @@
  Target Server Version : 100408
  File Encoding         : 65001
 
- Date: 27/12/2019 00:51:47
+ Date: 27/12/2019 10:10:38
 */
 
 SET NAMES utf8mb4;
@@ -47,12 +47,9 @@ DROP TABLE IF EXISTS `class`;
 CREATE TABLE `class`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `teacher_id` int(11) NOT NULL,
-  `test_paper_id` int(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `fk_teacher_class_id`(`teacher_id`) USING BTREE,
-  INDEX `fk_test_paper_class_id`(`test_paper_id`) USING BTREE,
-  CONSTRAINT `fk_teacher_class_id` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `fk_test_paper_class_id` FOREIGN KEY (`test_paper_id`) REFERENCES `test_paper` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `fk_teacher_class_id` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
@@ -133,7 +130,10 @@ CREATE TABLE `test_paper`  (
   `starttime` datetime(0) NOT NULL,
   `endtime` datetime(0) NOT NULL,
   `full_marks` int(11) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
+  `class_id` int(11) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `fk_class_test_paper_id`(`class_id`) USING BTREE,
+  CONSTRAINT `fk_class_test_paper_id` FOREIGN KEY (`class_id`) REFERENCES `class` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
