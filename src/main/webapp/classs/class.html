@@ -40,9 +40,10 @@
                 sort  : true
             }, {
                 field : 'teacher_id',
-                title : '教师ID',
+                title : '教师名称',
                 edit  : 'text',
-                align : 'center'
+                align : 'center',
+                templet:'<div>{{f1(d.teacher_id)}}</div>'
             }, {
                 fixed : 'right',
                 title : '操作',
@@ -118,6 +119,28 @@
             layer.msg('[ID: '+ data.id +'] ' + field + ' 字段更改为：'+ value);
         });
     });
+
+    function f1(id) {
+        var teacher_id = id;
+        console.log("teacher_id:"+teacher_id);
+        var title = "HEllo";
+        var $ = layui.jquery;
+        $.ajax({
+            url:'/teacher/queryUserName?page=1&limit=10&teacher_id='+id,
+            dataType:'json',
+            async:false,
+            success:function (data) {
+                var jsondata = data;
+                $.each(data,function (index,obj) {
+                    title = data.username;
+                    console.log("title:"+title);
+                });
+            },
+            error:function (data) {
+            }
+        });
+        return title;
+    }
 </script>
 
 <script>

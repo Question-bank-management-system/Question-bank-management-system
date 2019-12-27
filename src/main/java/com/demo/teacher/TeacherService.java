@@ -36,4 +36,8 @@ public class TeacherService {
     public int queryUserid(int teacher_id) {
         return Db.queryInt("select user_id from teacher where id = ?", teacher_id);
     }
+
+    public String queryName(int id) {
+        return Db.queryStr("select username from user u inner join teacher t on t.user_id = u.id and t.id = ?", id);
+    }
 }

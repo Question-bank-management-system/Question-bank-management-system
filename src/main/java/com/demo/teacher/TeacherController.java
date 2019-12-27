@@ -71,4 +71,15 @@ public class TeacherController extends Controller{
         redirect("/teacher");
     }
 
+    /*    public void queryUserName(){
+        int user_id = getParaToInt("user_id");
+        String name = userService.queryName(user_id);
+        renderJson("username", name);
+    }*/
+    public void queryUserName(){
+        int teacher_id = getParaToInt("teacher_id");
+        String name = teacherService.queryName(teacher_id);
+        renderJson("username",name);
+    }
+
 }
