@@ -5,6 +5,7 @@ import com.demo.blog.BlogController;
 import com.demo.classs.ClassController;
 import com.demo.common.model.Subject;
 import com.demo.common.model._MappingKit;
+import com.demo.exam.ExamController;
 import com.demo.index.IndexController;
 import com.demo.login.LoginController;
 import com.demo.register.RegisterController;
@@ -90,6 +91,7 @@ public class DemoConfig extends JFinalConfig {
 		me.add("/topic", TopicController.class);
 		me.add("/subject", SubjectController.class);
 		me.add("/tempPaper", TempPaperController.class);
+		me.add("/exam", ExamController.class);
 	}
 	
 	public void configEngine(Engine me) {
