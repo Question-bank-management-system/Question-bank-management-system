@@ -11,7 +11,7 @@
  Target Server Version : 100408
  File Encoding         : 65001
 
- Date: 27/12/2019 10:10:38
+ Date: 27/12/2019 11:03:17
 */
 
 SET NAMES utf8mb4;
@@ -78,8 +78,9 @@ CREATE TABLE `student`  (
   `classid` int(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `fk_user_student_id`(`user_id`) USING BTREE,
-  INDEX `fk_class_student_id`(`classid`) USING BTREE,
-  CONSTRAINT `fk_user_student_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  INDEX `fk_class_student`(`classid`) USING BTREE,
+  CONSTRAINT `fk_user_student_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_class_student` FOREIGN KEY (`classid`) REFERENCES `class` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
