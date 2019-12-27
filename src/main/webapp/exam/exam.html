@@ -2,16 +2,16 @@
 
 #define main()
 
-<table id="testPaper" lay-filter="testPaper" ></table>
+<table id="exam" lay-filter="exam" ></table>
 
 <!--数据表格开始-->
-
-<script type="text/html" id="barTestPaper">
+<div id="view"></div>
+<script type="text/html" id="barExam">
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="detail">查看</a>
     <a class="layui-btn layui-btn-xs" lay-event="del">删除</a>
 </script>
 
-<script type="text/html" id="toolbarTestPaper">
+<script type="text/html" id="toolbarExam">
     <div class="layui-btn-container">
         <button class="layui-btn layui-btn-sm" lay-event="add" >添加</button>
         <button class="layui-btn layui-btn-sm dw-refresh" lay-event="refresh">刷新</button>
@@ -26,10 +26,10 @@
             $ = layui.jquery;
         //方法级渲染，一个表格实例
         table.render({
-            elem    : '#testPaper',
-            toolbar : '#toolbarTestPaper',
+            elem    : '#exam',
+            toolbar : '#toolbarExam',
             cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
-            url  : '/testPaper/list',
+            url  : '/exam/list',
             cols : [ [ {
                 type  : 'checkbox',
                 fixed : 'left'
@@ -39,49 +39,39 @@
                 align : 'center',
                 sort  : true
             }, {
-                field : 'all_time',
-                title : '考试时间',
+                field : 'testpaper_id',
+                title : '试卷ID',
                 edit  : 'text',
                 align : 'center'
             }, {
-                field : 'starttime',
-                title : '开始时间',
+                field : 'score',
+                title : '试卷得分',
                 edit  : 'text',
                 align : 'center'
             },{
-                field : 'endtime',
-                title : '结束时间',
-                edit  : 'text',
-                align : 'center'
-            }
-            ,{
-                field : 'full_marks',
-                title : '考试分数',
+                field : 'student_id',
+                title : '学生ID',
                 edit  : 'text',
                 align : 'center'
             },{
-                field : 'class_id',
-                title : '班级ID',
-                edit  : 'text',
-                align : 'center'
-            }, {
                 fixed : 'right',
                 title : '操作',
                 align : 'center',
-                toolbar : '#barTestPaper',
+                toolbar : '#barExam',
                 width : 220
             } ] ],
             page : true,
-            id:'testPaperReload'
+            id:'examReload'
         });
 
-        table.on('toolbar(testPaper)', function(obj) {
+
+        table.on('toolbar(exam)', function(obj) {
             var data = obj.data;
             if (obj.event === "add") {
                 layer.open({
                     type: 1,
                     skin: 'layui-layer-rim', //加上边框
-                    area: ['400px', '370px'], //宽高
+                    area: ['400px', '300px'], //宽高
                     content: $('#form_add')
                     // layer.alert('编辑行：<br>'+ JSON.stringify(data))
                 });
@@ -92,11 +82,11 @@
         });
 
         //监听表格复选框选择
-        table.on('checkbox(testPaper)', function(obj){
+        table.on('checkbox(exam)', function(obj){
             console.log(obj)
         });
         //监听行工具事件
-        table.on('tool(testPaper)', function(obj) {
+        table.on('tool(exam)', function(obj) {
             var data = obj.data;
             if (obj.event === 'detail') {
                 // window.alert("Hello");
@@ -106,7 +96,7 @@
                     var $ = layui.$;
                     $.ajax({
                         type: 'get',
-                        url: "/testPaper/delete?id=" + data.id, // ajax请求路径
+                        url: "/exam/delete?id=" + data.id, // ajax请求路径
                         data: JSON.stringify(data),
                         datatype: "json",
                         contentType: "application/json;charset=utf-8",
@@ -121,14 +111,14 @@
             }
         });
         //监听单元格编辑
-        table.on('edit(testPaper)', function(obj){
+        table.on('edit(exam)', function(obj){
             var value = obj.value //得到修改后的值
                 ,data = obj.data //得到所在行所有键值
                 ,field = obj.field; //得到字段
             var $=layui.$;
             $.ajax({
                 type: 'get',
-                url: "/testPaper/update?id="+data.id+"&field="+field+"&value="+value, // ajax请求路径
+                url: "/exam/update?id="+data.id+"&field="+field+"&value="+value, // ajax请求路径
                 data:JSON.stringify(data),
                 datatype:"json",
                 contentType:"application/json;charset=utf-8",
@@ -139,6 +129,7 @@
             layer.msg('[ID: '+ data.id +'] ' + field + ' 字段更改为：'+ value);
         });
     });
+
 </script>
 
 <script>
@@ -146,20 +137,19 @@
         var form = layui.form
             ,layer = layui.layer
             ,layedit = layui.layedit
-            ,laydate = layui.laydate;
+            ,laydate = layui.laydate
+            ,$ = layui.$;
 
         //日期
         laydate.render({
-            elem: '#date',
-            type: 'datetime'
+            elem: '#date'
         });
         laydate.render({
-            elem: '#date1',
-            type: 'datetime'
+            elem: '#date1'
         });
 
         //创建一个编辑器
-        var editIndex = layedit.build('LAY_testPaper_editor');
+        var editIndex = layedit.build('LAY_exam_editor');
 
         //自定义验证规则
         form.verify({
@@ -193,7 +183,7 @@
             var $ = layui.$;
             $.ajax({
                 type: 'post',
-                url: "/testPaper/add", // ajax请求路径
+                url: "/exam/add", // ajax请求路径
                 data: JSON.stringify(data.field),
                 datatype: "json",
                 contentType: "application/json;charset=utf-8",
@@ -223,54 +213,39 @@
             alert(JSON.stringify(data));
         });
     });
+
 </script>
 #end
 <!--添加的弹出层开始-->
 <div id= 'form_add' style="margin: 0 auto;width: 370px;display: none;margin-top: 10px">
-    <form class="layui-form layui-form-pane" action="/testPaper/add" method="post"  style="">
+    <form class="layui-form layui-form-pane" action="/exam/add" method="post"  style="">
         <div class="layui-form-item">
-            <label class="layui-form-label">考试时间</label>
+            <label class="layui-form-label">试卷ID</label>
             <div class="layui-input-inline">
                 <label>
-                    <input type="text" name="testPaper.all_time" placeholder="请输入" autocomplete="off" class="layui-input">
+                    <input type="text" name="exam.testpaper_id" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
                 </label>
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">开始时间</label>
+            <label class="layui-form-label">试卷得分</label>
             <div class="layui-input-inline">
                 <label>
-                    <input type="text" name="testPaper.starttime" placeholder="请输入" autocomplete="off" class="layui-input" id="date">
+                    <input type="text" name="exam.score" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
                 </label>
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">结束时间</label>
+            <label class="layui-form-label">学生ID</label>
             <div class="layui-input-inline">
                 <label>
-                    <input type="text" name="testPaper.endtime" placeholder="请输入" autocomplete="off" class="layui-input" id="date1">
-                </label>
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">考试分数</label>
-            <div class="layui-input-inline">
-                <label>
-                    <input type="text" name="testPaper.full_marks" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
-                </label>
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">班级ID</label>
-            <div class="layui-input-inline">
-                <label>
-                    <input type="text" name="testPaper.class_id" placeholder="请输入" autocomplete="off" class="layui-input">
+                    <input type="text" name="exam.student_id" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
                 </label>
             </div>
         </div>
         <div class="layui-form-item">
             <div class="layui-input-block">
-                <button type="submit" class="layui-btn" lay-filter="*">立即提交</button>
+                <button type="submit" class="layui-btn">立即提交</button>
                 <!--            <button lay-submit lay-filter="*">提交</button>-->
                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
             </div>
