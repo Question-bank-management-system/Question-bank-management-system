@@ -167,4 +167,10 @@ public class StudentController extends Controller {
 //        studentService.add(student);
         redirect("/student");
     }
+
+    public void queryUserName(){
+        int student_id = getParaToInt("student_id");
+        String name = studentService.queryName(student_id);
+        renderJson("username",name);
+    }
 }

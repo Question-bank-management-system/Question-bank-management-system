@@ -52,7 +52,8 @@
                 field : 'student_id',
                 title : '学生ID',
                 edit  : 'text',
-                align : 'center'
+                align : 'center',
+                templet:'<div>{{f1(d.student_id)}}</div>'
             },{
                 fixed : 'right',
                 title : '操作',
@@ -129,6 +130,28 @@
             layer.msg('[ID: '+ data.id +'] ' + field + ' 字段更改为：'+ value);
         });
     });
+
+    function f1(id) {
+        var student_id = id;
+        console.log("student_id:"+student_id);
+        var title = "HEllo";
+        var $ = layui.jquery;
+        $.ajax({
+            url:'/student/queryUserName?page=1&limit=10&student_id='+id,
+            dataType:'json',
+            async:false,
+            success:function (data) {
+                var jsondata = data;
+                $.each(data,function (index,obj) {
+                    title = data.username;
+                    console.log("title:"+title);
+                });
+            },
+            error:function (data) {
+            }
+        });
+        return title;
+    }
 
 </script>
 

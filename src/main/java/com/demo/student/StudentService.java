@@ -46,5 +46,8 @@ public class StudentService {
         return Db.queryInt("select count(*) from student where classid = ?",classid);
     }
 
+    public String queryName(int id) {
+        return Db.queryStr("select username from user u inner join student s on s.user_id = u.id and s.id = ?", id);
+    }
 
 }
