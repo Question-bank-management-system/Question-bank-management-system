@@ -95,4 +95,10 @@ public class UserController extends Controller{
         renderJson("teacher_name", userName);
     }
 
+    public void queryUserName(){
+        int user_id = getParaToInt("user_id");
+        String name = userService.queryName(user_id);
+        renderJson("username", name);
+    }
+
 }

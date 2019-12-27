@@ -39,7 +39,8 @@
                 field : 'user_id',
                 align : 'center',
                //edit:   'text',
-                title : '用户ID'
+                title : '用户ID',
+                templet:'<div>{{f1(d.user_id)}}</div>'
             }, {
                 field : 'classid',
                 align : 'center',
@@ -111,6 +112,30 @@
             layer.msg('[ID: '+ data.id +'] ' + field + ' 字段更改为：'+ value);
         });
     });
+
+
+
+    function f1(id) {
+        var user_id = id;
+        console.log("user_id:"+user_id);
+        var title = "HEllo";
+        var $ = layui.jquery;
+        $.ajax({
+            url:'/user/queryUserName?page=1&limit=10&user_id='+id,
+            dataType:'json',
+            async:false,
+            success:function (data) {
+                var jsondata = data;
+                $.each(data,function (index,obj) {
+                    title = data.username;
+                    console.log("title:"+title);
+                });
+            },
+            error:function (data) {
+            }
+        });
+        return title;
+    }
 </script>
 
 <script>

@@ -45,4 +45,6 @@ public class StudentService {
     int queryCount(int classid) {
         return Db.queryInt("select count(*) from student where classid = ?",classid);
     }
+
+
 }
