@@ -2,6 +2,7 @@ package com.demo.adminUser;
 
 import com.demo.common.model.AdminUser;
 import com.demo.common.model.User;
+import com.demo.user.UserService;
 import com.jfinal.aop.Inject;
 import com.jfinal.core.Controller;
 import com.jfinal.json.Json;
@@ -11,6 +12,9 @@ import java.util.List;
 public class AdminUserController extends Controller {
     @Inject
     AdminUserService adminUserService;
+
+    @Inject
+    UserService userService;
 
     public void index(){
         User user = getSessionAttr("user");
@@ -23,6 +27,26 @@ public class AdminUserController extends Controller {
         User user = getSessionAttr("user");
         setAttr("user",user);
         render("adminPerson.html");}
+
+
+/*    public void personal_information_update(){
+        User user1 = getSessionAttr("user");
+        User user = getModel(User.class);
+        user.setId(user1.getId());
+        user.update();
+        setAttr("user", userService.findById(user.getId()));
+        render("personalfile/personal_update.html");
+    }*/
+
+
+    public void adminUpdate(){
+        User user1 = getSessionAttr("user");
+        User user = getModel(User.class);
+        user.setId(user1.getId());
+        user.update();
+        setAttr("user", userService.findById(user.getId()));
+        render("adminUpdate.html");
+    }
 
     public void list(){
         int page = getParaToInt("page");
