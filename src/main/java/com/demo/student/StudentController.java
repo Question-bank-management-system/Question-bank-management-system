@@ -33,9 +33,13 @@ public class StudentController extends Controller {
     }
     public void personal_center() {
         User user = getSessionAttr("user");
-        User user1 = userService.findById(user.getId());
-        setAttr("user", user1);
-        render("personalfile/personal_center.html");
+        if(user != null){
+            User user1 = userService.findById(user.getId());
+            setAttr("user", user1);
+            render("personalfile/personal_center.html");
+        }else {
+            redirect("/");
+        }
     }
 
     public void personal_update(){
