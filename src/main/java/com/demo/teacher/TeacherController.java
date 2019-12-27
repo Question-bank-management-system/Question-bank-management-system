@@ -12,12 +12,15 @@ public class TeacherController extends Controller{
     @Inject
     TeacherService teacherService;
 
-    //    教师系统前端
+    //    教师系统前端首页
     public void teaIndex(){render("teaIndex.html");}
 
-    public void uploadQuestions(){render("uploadQuestions.html");}
-    public void writtingPaper(){render("writtingPaper.html");}
+    public void examManagement(){render("examManagement.html");}
+    public void testpaperManagement(){render("testpaperManagement.html");}
     public void managementClass(){render("managementClass.html");}
+    public void personalCenter(){render("personalfile/personalCenter.html");}
+    public void personalUpdate(){render("personalfile/personalUpdate.html");}
+
 
 
     public void index() {
