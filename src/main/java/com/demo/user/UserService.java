@@ -74,6 +74,6 @@ public class UserService {
     }
 
     public String queryName(int user_id) {
-        return Db.queryStr("select realname from user where id = ?", user_id);
+        return Db.queryStr("select username from user where id = ?", user_id);
     }
 }
