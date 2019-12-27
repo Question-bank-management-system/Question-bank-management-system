@@ -3,56 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <title>题趣多题库系统-注册</title>
-    <link rel="stylesheet" type="text/css" href="../assets/res/css/login.css">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="../assets/res/css/login.css"/>
+    <link rel="stylesheet" type="text/css" href="../assets/res/layui/css/layui.css" media="all">
     <link rel="stylesheet" type="text/css" href="../assets/res/css/register.css"/>
+
 </head>
 
 <body style="background-image: url(../assets/res/image/login.png); background-size: 100%">
-<div id="register_frame">
-    <div>
-<!--        <p id="image_logo" style="width: 30px;height: 10px"><img src="../assets/res/image/logo.png"></p>-->
-        <img src="../assets/res/image/register_logo.png" style="width: 400px;height: 50px;margin-top: 30px">
+<div id="login_frame">
 
-    </div>
-
-    <div class="register_message">
-        <form method="post" action="/register/register">
-
-            <!--登陆类型-->
-            <div id="select_register_div">
-                <label class="label_input">注册类型</label>
-                <div class="select_register">
-                    <select name="user.type" lay-filter="type">
-                        <option value="" selected>请选择注册类型</option>
-                        <option value="admin">admin</option>
-                        <option value="teacher">teacher</option>
-                        <option value="student">student</option>
-                    </select>
-                </div>
+    <form action="" class="layui-form">
+        <div class="layui-form-item" style="margin-left: 10px; float: left;margin-top: 30px">
+            <label class="layui-form-label">用户身份</label>
+            <div class="layui-input-inline">
+                <select name="modules" lay-verify="required" lay-search="">
+                    <option value="student" checked="">admin</option>
+                    <option value="student" checked="">teacher</option>
+                    <option value="student" checked="">student</option>
+                </select>
             </div>
+        </div>
 
-            <p><label class="label_input">用户名</label><input type="text" name="user.username" class="text_field"/></p>
-            <p><label class="label_input">密  码</label><input type="password" name="user.password" class="text_field"/></p>
-
-            <div>
-                <label class="lable_chose">
-                    <input type="checkbox" name="Terms[yes]" title="同意">
-                    同意
-                    <a href="http://baidu.com">《题趣多注册协议》</a>
-                    &
-                    <a href="http://baidu.com">《隐私政策》</a>
-                </label>
+        <div class="layui-form-item" style="float: left">
+            <label class="layui-form-label">用户名</label>
+            <div class="layui-input-block" style="width: 190px">
+                <input type="text" style="margin-left: -10px;float: left" name="user.username" lay-verify="username" autocomplete="off" placeholder="请输入昵称" class="layui-input">
             </div>
+        </div>
 
-            <div style="margin-left: 20px;margin-top: 30px">
-                <button class="btn_register" type="button" onclick="window.location.href='/login/'">注册</button>
+        <div class="layui-form-item">
+            <label class="layui-form-label">密 码</label>
+            <div class="layui-input-inline">
+                <input type="password" style="margin-left: 10px;float: left" name="user.password" lay-verify="pass" placeholder="请输入密码" autocomplete="off" class="layui-input" required="required">
             </div>
-        </form>
-    </div>
+            <div class="layui-form-mid layui-word-aux">请填写6到12位密码</div>
+        </div>
+
+        <div class="layui-form-item" style="margin-top: 30px">
+            <div class="layui-input-block" style="margin-left: -80px; float: left">
+                <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1" style="background-color: #2ab5a3;margin-left: 200px">提交注册</button>
+                <button type="reset" class="layui-btn layui-btn-primary" onclick="window.location.href='/login/'">转向登录</button>
+            </div>
+        </div>
+    </form>
+
+
+
+
 
 </div>
-
-
 <script src="../assets/res/layui/layui.js"></script>
 <script>
     layui.use(['form', 'layedit', 'laydate'], function(){
@@ -63,9 +65,9 @@
 
         //自定义验证规则
         form.verify({
-            title: function(value){
-                if(value.length < 5){
-                    return '标题至少得5个字符啊';
+            username: function(value){
+                if(value.length < 2){
+                    return '昵称至少得2个字符';
                 }
             }
             ,pass: [
