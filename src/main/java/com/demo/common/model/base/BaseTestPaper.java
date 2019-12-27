@@ -49,4 +49,12 @@ public abstract class BaseTestPaper<M extends BaseTestPaper<M>> extends Model<M>
 		return getInt("full_marks");
 	}
 
+	public void setClassId(java.lang.Integer classId) {
+		set("class_id", classId);
+	}
+	
+	public java.lang.Integer getClassId() {
+		return getInt("class_id");
+	}
+
 }
