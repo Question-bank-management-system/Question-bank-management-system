@@ -1,6 +1,7 @@
 package com.demo.testPaper;
 
 import com.demo.common.model.TestPaper;
+import com.demo.common.model.User;
 import com.demo.testPaper.TestPaperService;
 import com.jfinal.aop.Inject;
 import com.jfinal.core.Controller;
@@ -14,6 +15,8 @@ public class TestPaperController extends Controller{
     TestPaperService testPaperService;
 
     public void index() {
+        User user = getSessionAttr("user");
+        setAttr("user",user);
         //setAttr("testPaperPage",testPaperService.paginate(getParaToInt(0, 1), 10));
         render("testPaper.html");
     }

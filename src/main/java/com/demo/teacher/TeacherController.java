@@ -1,6 +1,7 @@
 package com.demo.teacher;
 
 import com.demo.common.model.Teacher;
+import com.demo.common.model.User;
 import com.jfinal.aop.Inject;
 import com.jfinal.core.Controller;
 import com.jfinal.json.Json;
@@ -13,7 +14,8 @@ public class TeacherController extends Controller{
     TeacherService teacherService;
 
     //    教师系统前端首页
-    public void teaIndex(){render("teaIndex.html");}
+    public void teaIndex(){
+        render("teaIndex.html");}
 
     public void examManagement(){render("examManagement.html");}
     public void testpaperManagement(){render("testpaperManagement.html");}
@@ -29,6 +31,8 @@ public class TeacherController extends Controller{
     }
 
     public void index1(){
+        User user = getSessionAttr("user");
+        setAttr("user",user);
         render("teacher.html");
     }
 

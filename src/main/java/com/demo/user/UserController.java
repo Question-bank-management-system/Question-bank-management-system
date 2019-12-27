@@ -20,7 +20,8 @@ public class UserController extends Controller{
     TeacherService teacherService;
 
     public void index() {
-//        setAttr("userPage",userService.paginate(getParaToInt(0, 1), 10));
+        User user = getSessionAttr("user");
+        setAttr("user",user);
         render("user.html");
     }
 

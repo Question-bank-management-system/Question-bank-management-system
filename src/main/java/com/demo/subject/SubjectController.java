@@ -1,5 +1,6 @@
 package com.demo.subject;
 
+import com.demo.common.model.User;
 import com.demo.subject.SubjectService;
 import com.demo.common.model.Subject;
 import com.jfinal.aop.Inject;
@@ -13,6 +14,8 @@ public class SubjectController extends Controller {
     SubjectService subjectService;
 
     public void index(){
+        User user = getSessionAttr("user");
+        setAttr("user",user);
         //setAttr("adminUserPage",adminService.paginate(getParaToInt(0, 1),10));
         render("subject.html");
     }

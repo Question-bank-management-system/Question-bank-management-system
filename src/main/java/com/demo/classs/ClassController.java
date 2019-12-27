@@ -2,6 +2,7 @@ package com.demo.classs;
 
 import com.demo.classs.ClassService;
 import com.demo.common.model.Class;
+import com.demo.common.model.User;
 import com.jfinal.aop.Inject;
 import com.jfinal.core.Controller;
 import com.jfinal.json.Json;
@@ -13,6 +14,8 @@ public class ClassController extends Controller {
     ClassService classService;
 
     public void index(){
+        User user = getSessionAttr("user");
+        setAttr("user",user);
         //setAttr("classPage",classService.paginate(getParaToInt(0, 1),10));
         render("class.html");
     }

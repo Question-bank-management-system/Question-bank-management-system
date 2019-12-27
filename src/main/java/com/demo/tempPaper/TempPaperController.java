@@ -1,6 +1,7 @@
 package com.demo.tempPaper;
 
 import com.demo.common.model.TempPaper;
+import com.demo.common.model.User;
 import com.demo.tempPaper.TempPaperService;
 import com.jfinal.aop.Inject;
 import com.jfinal.core.Controller;
@@ -13,6 +14,8 @@ public class TempPaperController extends Controller {
     TempPaperService tempPaperService;
 
     public void index(){
+        User user = getSessionAttr("user");
+        setAttr("user",user);
         //setAttr("adminUserPage",adminService.paginate(getParaToInt(0, 1),10));
         render("tempPaper.html");
     }

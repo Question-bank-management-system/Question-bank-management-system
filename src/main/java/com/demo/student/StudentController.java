@@ -128,6 +128,8 @@ public class StudentController extends Controller {
 
     public void index(){
         //setAttr("studentPage",studentService.paginate(getParaToInt(0, 1),10));
+        User user = getSessionAttr("user");
+        setAttr("user",user);
         render("student.html");
     }
 

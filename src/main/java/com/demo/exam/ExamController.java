@@ -1,5 +1,6 @@
 package com.demo.exam;
 
+import com.demo.common.model.User;
 import com.demo.exam.ExamService;
 import com.demo.common.model.Exam;
 import com.jfinal.aop.Inject;
@@ -13,6 +14,8 @@ public class ExamController extends Controller {
     ExamService examService;
 
     public void index(){
+        User user = getSessionAttr("user");
+        setAttr("user",user);
         //setAttr("adminUserPage",adminService.paginate(getParaToInt(0, 1),10));
         render("exam.html");
     }

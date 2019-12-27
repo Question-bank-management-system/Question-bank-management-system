@@ -1,6 +1,7 @@
 package com.demo.topic;
 
 import com.demo.common.model.Topic;
+import com.demo.common.model.User;
 import com.demo.topic.TopicService;
 import com.jfinal.aop.Inject;
 import com.jfinal.core.Controller;
@@ -14,6 +15,8 @@ public class TopicController extends Controller{
     TopicService topicService;
 
     public void index() {
+        User user = getSessionAttr("user");
+        setAttr("user",user);
         //setAttr("topicPage",topicService.paginate(getParaToInt(0, 1), 10));
         render("topic.html");
     }

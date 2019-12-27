@@ -1,6 +1,7 @@
 package com.demo.adminUser;
 
 import com.demo.common.model.AdminUser;
+import com.demo.common.model.User;
 import com.jfinal.aop.Inject;
 import com.jfinal.core.Controller;
 import com.jfinal.json.Json;
@@ -12,9 +13,16 @@ public class AdminUserController extends Controller {
     AdminUserService adminUserService;
 
     public void index(){
+        User user = getSessionAttr("user");
+        setAttr("user",user);
         //setAttr("adminUserPage",adminService.paginate(getParaToInt(0, 1),10));
         render("adminUser.html");
     }
+
+    public void personCenter(){
+        User user = getSessionAttr("user");
+        setAttr("user",user);
+        render("adminPerson.html");}
 
     public void list(){
         int page = getParaToInt("page");
