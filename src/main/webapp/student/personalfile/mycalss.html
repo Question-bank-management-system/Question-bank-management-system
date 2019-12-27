@@ -18,6 +18,7 @@
     <div class="layui-btn-container">
         <button class="layui-btn layui-btn-sm dw-refresh" lay-event="refresh">刷新</button>
         <button class="layui-btn layui-btn-sm dw-refresh" onclick="window.location.href='/student/class_index'">班级列表</button>
+        <button class="layui-btn layui-btn-sm dw-refresh" onclick="window.location.href='/student/list_myexam'">我的考试</button>
     </div>
 </script>
 <!--数据表格结束-->
@@ -47,14 +48,6 @@
             }, {
                 field : 'classid',
                 title : '班级ID',
-                align : 'center'
-            }, {
-                field : 'test_paperid',
-                title : '试卷ID',
-                align : 'center'
-            }, {
-                field : 'score',
-                title : '我的分数',
                 align : 'center'
             }, {
                 fixed : 'right',
