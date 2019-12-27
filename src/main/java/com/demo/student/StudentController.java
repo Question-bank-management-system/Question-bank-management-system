@@ -39,9 +39,19 @@ public class StudentController extends Controller {
     }
 
     public void personal_update(){
+        User user = getSessionAttr("user");
+        setAttr("user", userService.findById(user.getId()));
         render("personalfile/personal_update.html");
     }
 
+    public void personal_information_update(){
+        User user1 = getSessionAttr("user");
+        User user = getModel(User.class);
+        user.setId(user1.getId());
+        user.update();
+        setAttr("user", userService.findById(user.getId()));
+        render("personalfile/personal_update.html");
+    }
     public void class_index(){
         render("personalfile/addclass.html");
     }
