@@ -38,8 +38,7 @@ public class LoginController extends Controller {
     }
 
     public void logout(){
-        User user  = new User();
-        setSessionAttr("user",user);
+        getSession().invalidate();
         redirect("/login");
     }
 }
