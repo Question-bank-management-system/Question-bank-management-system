@@ -82,13 +82,6 @@ public class UserController extends Controller{
     }
 
 
-    public void findUser(){
-        String username = getPara("username");
-        String type = getPara("type");
-        System.out.println(username);
-        System.out.println(type);
-    }
-
     public void queryName(){
         int teacher_id = getParaToInt("teacher_id");
         int user_id = teacherService.queryUserid(teacher_id);
